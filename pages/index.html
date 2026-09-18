@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Pixel Valley Code é uma aventura em pixel art onde você aprende programação enquanto reconstrói uma fazenda."
+    >
+
+    <meta name="theme-color" content="#0F2F0B">
+
+    <title>Pixel Valley Code — Aprenda. Explore. Construa.</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Silkscreen:wght@400;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+
+        <div class="container">
+
+            <a href="#home" class="logo" aria-label="Pixel Valley Code - início">
+
+                <span class="logo__pixel">PV</span>
+
+                <span class="logo__text">
+                    Pixel Valley
+                    <strong>Code</strong>
+                </span>
+
+            </a>
+
+            <nav class="site-navigation" aria-label="Navegação principal">
+
+                <ul class="site-navigation__list">
+
+                    <li>
+                        <a href="#home" class="site-navigation__link">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#sobre" class="site-navigation__link">
+                            Sobre
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#gameplay" class="site-navigation__link">
+                            Gameplay
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#personagens" class="site-navigation__link">
+                            Personagens
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#demo" class="site-navigation__link">
+                            Demo
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#contato" class="site-navigation__link">
+                            Contato
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+            <a href="#demo" class="button button--small">
+                Jogar Demo
+            </a>
+
+            <button
+                type="button"
+                class="menu-toggle"
+                aria-label="Abrir menu"
+                aria-expanded="false"
+                aria-controls="main-navigation"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+
+    </header>
+
+    <main>
+
+        <section id="home" class="hero">
+
+            <div class="hero__background" aria-hidden="true">
+
+                <span class="hero__sun"></span>
+
+                <span class="hero__cloud hero__cloud--one"></span>
+                <span class="hero__cloud hero__cloud--two"></span>
+
+                <span class="hero__mountain hero__mountain--one"></span>
+                <span class="hero__mountain hero__mountain--two"></span>
+
+            </div>
+
+            <div class="container hero__container">
+
+                <article class="hero__content">
+
+                    <span class="eyebrow">
+                        Uma aventura para aprender programação
+                    </span>
+
+                    <h1 class="hero__title">
+                        Cada linha de código
+                        <span>transforma o vale.</span>
+                    </h1>
+
+                    <p class="hero__description">
+                        Você herdou uma fazenda abandonada. Agora precisa aprender programação, ajudar os moradores do vale e reconstruir seu novo lar.
+                    </p>
+
+                    <div class="hero__actions">
+
+                        <a href="#demo" class="button button--primary">
+                            Jogar Demo
+                            <span aria-hidden="true">→</span>
+                        </a>
+
+                        <a href="#sobre" class="button button--ghost">
+                            Conhecer o Vale
+                        </a>
+
+                    </div>
+
+                    <ul class="hero__stats" aria-label="Informações sobre o jogo">
+
+                        <li>
+                            <strong>04</strong>
+                            <span>Mentores</span>
+                        </li>
+
+                        <li>
+                            <strong>30+</strong>
+                            <span>Desafios</span>
+                        </li>
+
+                        <li>
+                            <strong>∞</strong>
+                            <span>Aventuras</span>
+                        </li>
+
+                    </ul>
+
+                </article>
+
+                <figure class="hero__scene">
+
+                    <span class="scene__cloud scene__cloud--one" aria-hidden="true"></span>
+                    <span class="scene__cloud scene__cloud--two" aria-hidden="true"></span>
+
+                    <img
+                        src="assets/images/mountains.png"
+                        alt=""
+                        class="scene__mountains"
+                    >
+
+                    <img
+                        src="assets/images/trees.png"
+                        alt=""
+                        class="scene__trees"
+                    >
+
+                    <img
+                        src="assets/images/farm.png"
+                        alt="A fazenda do jogador no Vale Pixel"
+                        class="scene__farm"
+                    >
+
+                    <img
+                        src="assets/images/player.png"
+                        alt="Personagem principal"
+                        class="scene__player"
+                    >
+
+                    <img
+                        src="assets/images/donatelo.png"
+                        alt="Donatelo"
+                        class="scene__character scene__character--donatelo"
+                    >
+
+                    <img
+                        src="assets/images/frida.png"
+                        alt="Frida"
+                        class="scene__character scene__character--frida"
+                    >
+
+                    <img
+                        src="assets/images/koda.png"
+                        alt="Koda"
+                        class="scene__character scene__character--koda"
+                    >
+
+                    <img
+                        src="assets/images/agatha.png"
+                        alt="Agatha"
+                        class="scene__character scene__character--agatha"
+                    >
+
+                    <span class="scene__grass" aria-hidden="true"></span>
+
+                    <figcaption>
+                        Explore o Vale Pixel com seus novos amigos.
+                    </figcaption>
+
+                </figure>
+
+            </div>
+
+        </section>
+
+        <section id="sobre" class="story section">
+
+            <div class="container">
+
+                <header class="section-header">
+
+                    <span class="eyebrow">
+                        Sua história começa aqui
+                    </span>
+
+                    <h2>
+                        Uma fazenda.
+                        <span>Um novo começo.</span>
+                    </h2>
+
+                    <p>
+                        Você chegou ao Vale Pixel com uma propriedade esquecida e muitas coisas para descobrir.
+                    </p>
+
+                </header>
+
+                <div class="story__content">
+
+                    <article class="story__text">
+
+                        <span class="story__number">
+                            01
+                        </span>
+
+                        <h3>
+                            Você herdou uma fazenda abandonada.
+                        </h3>
+
+                        <p>
+                            O lugar precisa de muito trabalho. A cabana está destruída, os caminhos desapareceram e os antigos equipamentos já não funcionam.
+                        </p>
+
+                        <p>
+                            Felizmente, você não está sozinho.
+                        </p>
+
+                        <a href="#personagens" class="text-link">
+                            Conheça seus companheiros
+                            <span aria-hidden="true">→</span>
+                        </a>
+
+                    </article>
+
+                    <figure class="story__image">
+
+                        <img
+                            src="assets/images/cabin-old.png"
+                            alt="Cabana antiga e abandonada da fazenda"
+                        >
+
+                        <figcaption>
+                            Tudo começa com uma pequena cabana.
+                        </figcaption>
+
+                    </figure>
+
+                </div>
+
+                <div class="story__content story__content--reverse">
+
+                    <article class="story__text">
+
+                        <span class="story__number">
+                            02
+                        </span>
+
+                        <h3>
+                            Aprenda programação com os moradores.
+                        </h3>
+
+                        <p>
+                            Cada morador possui uma personalidade, uma profissão e uma maneira diferente de ensinar programação.
+                        </p>
+
+                        <p>
+                            Resolva seus desafios e transforme o conhecimento adquirido em melhorias para a fazenda.
+                        </p>
+
+                        <a href="#gameplay" class="text-link">
+                            Descobrir como funciona
+                            <span aria-hidden="true">→</span>
+                        </a>
+
+                    </article>
+
+                    <figure class="story__image">
+
+                        <img
+                            src="assets/images/valley.png"
+                            alt="Vale Pixel com os moradores e construções"
+                        >
+
+                        <figcaption>
+                            O vale está cheio de histórias para descobrir.
+                        </figcaption>
+
+                    </figure>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section id="gameplay" class="gameplay section">
+
+            <div class="container">
+
+                <header class="section-header section-header--center">
+
+                    <span class="eyebrow">
+                        Como funciona
+                    </span>
+
+                    <h2>
+                        Aprenda.
+                        <span>Jogue. Reconstrua.</span>
+                    </h2>
+
+                    <p>
+                        O conhecimento que você conquista dentro dos desafios também transforma o mundo ao seu redor.
+                    </p>
+
+                </header>
+
+                <ol class="gameplay__steps">
+
+                    <li class="gameplay-card">
+
+                        <span class="gameplay-card__number">
+                            01
+                        </span>
+
+                        <div class="gameplay-card__icon" aria-hidden="true">
+                            ◈
+                        </div>
+
+                        <h3>
+                            Aprenda
+                        </h3>
+
+                        <p>
+                            Conheça conceitos de lógica, sintaxe e programação através de pequenas missões.
+                        </p>
+
+                    </li>
+
+                    <li class="gameplay-card">
+
+                        <span class="gameplay-card__number">
+                            02
+                        </span>
+
+                        <div class="gameplay-card__icon" aria-hidden="true">
+                            &lt;/&gt;
+                        </div>
+
+                        <h3>
+                            Resolva
+                        </h3>
+
+                        <p>
+                            Complete códigos, responda perguntas e coloque seus conhecimentos à prova.
+                        </p>
+
+                    </li>
+
+                    <li class="gameplay-card">
+
+                        <span class="gameplay-card__number">
+                            03
+                        </span>
+
+                        <div class="gameplay-card__icon" aria-hidden="true">
+                            +
+                        </div>
+
+                        <h3>
+                            Reconstrua
+                        </h3>
+
+                        <p>
+                            Use as recompensas das missões para reconstruir sua casa e transformar a fazenda.
+                        </p>
+
+                    </li>
+
+                </ol>
+
+                <aside class="gameplay__reward">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            Sua evolução
+                        </span>
+
+                        <h3>
+                            Quanto mais você aprende, mais o vale cresce.
+                        </h3>
+
+                        <p>
+                            Novas construções, ferramentas, áreas e desafios aparecem conforme sua jornada avança.
+                        </p>
+
+                    </div>
+
+                    <ul>
+
+                        <li>
+                            <span aria-hidden="true">✦</span>
+                            Experiência
+                        </li>
+
+                        <li>
+                            <span aria-hidden="true">✦</span>
+                            Novas áreas
+                        </li>
+
+                        <li>
+                            <span aria-hidden="true">✦</span>
+                            Construções
+                        </li>
+
+                        <li>
+                            <span aria-hidden="true">✦</span>
+                            Amizades
+                        </li>
+
+                    </ul>
+
+                </aside>
+
+            </div>
+
+        </section>
+
+        <section id="personagens" class="characters section">
+
+            <div class="container">
+
+                <header class="section-header">
+
+                    <span class="eyebrow">
+                        Conheça o Vale
+                    </span>
+
+                    <h2>
+                        Você não vai
+                        <span>aprender sozinho.</span>
+                    </h2>
+
+                    <p>
+                        Quatro moradores. Quatro personalidades. Quatro formas diferentes de aprender programação.
+                    </p>
+
+                </header>
+
+                <div class="characters__grid">
+
+                    <article class="character-card character-card--donatelo">
+
+                        <figure>
+
+                            <img
+                                src="assets/images/donatelo.png"
+                                alt="Donatelo, mentor do Vale Pixel"
+                            >
+
+                        </figure>
+
+                        <div class="character-card__content">
+
+                            <span class="character-card__role">
+                                Mentor
+                            </span>
+
+                            <h3>
+                                Donatelo
+                            </h3>
+
+                            <p>
+                                O velho amigo que prepara você para os desafios do vale.
+                            </p>
+
+                            <dl>
+
+                                <div>
+                                    <dt>Especialidade</dt>
+                                    <dd>Lógica</dd>
+                                </div>
+
+                                <div>
+                                    <dt>Desafios</dt>
+                                    <dd>Ensino e dúvidas</dd>
+                                </div>
+
+                            </dl>
+
+                        </div>
+
+                    </article>
+
+                    <article class="character-card character-card--frida">
+
+                        <figure>
+
+                            <img
+                                src="assets/images/frida.png"
+                                alt="Frida, a vaca programadora"
+                            >
+
+                        </figure>
+
+                        <div class="character-card__content">
+
+                            <span class="character-card__role">
+                                Programadora
+                            </span>
+
+                            <h3>
+                                Frida
+                            </h3>
+
+                            <p>
+                                Uma cozinheira paciente que adora resolver problemas linha por linha.
+                            </p>
+
+                            <dl>
+
+                                <div>
+                                    <dt>Especialidade</dt>
+                                    <dd>Sintaxe</dd>
+                                </div>
+
+                                <div>
+                                    <dt>Desafios</dt>
+                                    <dd>Preencher lacunas</dd>
+                                </div>
+
+                            </dl>
+
+                        </div>
+
+                    </article>
+
+                    <article class="character-card character-card--koda">
+
+                        <figure>
+
+                            <img
+                                src="assets/images/koda.png"
+                                alt="Koda, o urso inventor"
+                            >
+
+                        </figure>
+
+                        <div class="character-card__content">
+
+                            <span class="character-card__role">
+                                Inventor
+                            </span>
+
+                            <h3>
+                                Koda
+                            </h3>
+
+                            <p>
+                                Um urso inventor que constrói robôs e bugigangas para toda a comunidade.
+                            </p>
+
+                            <dl>
+
+                                <div>
+                                    <dt>Especialidade</dt>
+                                    <dd>Conceitos</dd>
+                                </div>
+
+                                <div>
+                                    <dt>Desafios</dt>
+                                    <dd>Verdadeiro ou falso</dd>
+                                </div>
+
+                            </dl>
+
+                        </div>
+
+                    </article>
+
+                    <article class="character-card character-card--agatha">
+
+                        <figure>
+
+                            <img
+                                src="assets/images/agatha.png"
+                                alt="Agatha, a capivara da praia"
+                            >
+
+                        </figure>
+
+                        <div class="character-card__content">
+
+                            <span class="character-card__role">
+                                Exploradora
+                            </span>
+
+                            <h3>
+                                Agatha
+                            </h3>
+
+                            <p>
+                                Uma capivara tranquila que ajuda a comunidade com seus conhecimentos sobre dados.
+                            </p>
+
+                            <dl>
+
+                                <div>
+                                    <dt>Especialidade</dt>
+                                    <dd>Dados</dd>
+                                </div>
+
+                                <div>
+                                    <dt>Desafios</dt>
+                                    <dd>Múltipla escolha</dd>
+                                </div>
+
+                            </dl>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section id="demo" class="demo section">
+
+            <div class="container">
+
+                <header class="section-header section-header--center">
+
+                    <span class="eyebrow">
+                        Primeira missão
+                    </span>
+
+                    <h2>
+                        Coloque seu conhecimento
+                        <span>à prova.</span>
+                    </h2>
+
+                    <p>
+                        Experimente um pequeno desafio inspirado nas missões do jogo.
+                    </p>
+
+                </header>
+
+                <article class="game-window">
+
+                    <header class="game-window__header">
+
+                        <div class="game-window__dots" aria-hidden="true">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                        <span>
+                            MISSÃO_001
+                        </span>
+
+                        <span>
+                            +20 XP
+                        </span>
+
+                    </header>
+
+                    <div class="game-window__body">
+
+                        <div class="game-window__character">
+
+                            <figure>
+
+                                <img
+                                    src="assets/images/frida.png"
+                                    alt="Frida"
+                                >
+
+                            </figure>
+
+                            <p>
+                                "Oi! Você pode me ajudar a terminar esse código?"
+                            </p>
+
+                        </div>
+
+                        <div class="challenge">
+
+                            <span class="challenge__label">
+                                DESAFIO DE SINTAXE
+                            </span>
+
+                            <h3>
+                                Complete o código.
+                            </h3>
+
+                            <pre><code>for (let i = 0; i &lt; <span>___</span>; i++) {
+    console.log(i);
+}</code></pre>
+
+                            <form class="challenge__form">
+
+                                <fieldset>
+
+                                    <legend>
+                                        Qual valor completa o código?
+                                    </legend>
+
+                                    <label>
+                                        <input
+                                            type="radio"
+                                            name="demo-answer"
+                                            value="5"
+                                        >
+                                        <span>5</span>
+                                    </label>
+
+                                    <label>
+                                        <input
+                                            type="radio"
+                                            name="demo-answer"
+                                            value="10"
+                                        >
+                                        <span>10</span>
+                                    </label>
+
+                                    <label>
+                                        <input
+                                            type="radio"
+                                            name="demo-answer"
+                                            value="100"
+                                        >
+                                        <span>100</span>
+                                    </label>
+
+                                    <label>
+                                        <input
+                                            type="radio"
+                                            name="demo-answer"
+                                            value="i"
+                                        >
+                                        <span>i</span>
+                                    </label>
+
+                                </fieldset>
+
+                                <button
+                                    type="button"
+                                    class="button button--primary"
+                                    id="check-demo"
+                                >
+                                    Verificar resposta
+                                </button>
+
+                            </form>
+
+                            <output
+                                id="demo-result"
+                                class="challenge__result"
+                                aria-live="polite"
+                            ></output>
+
+                        </div>
+
+                    </div>
+
+                    <footer class="game-window__footer">
+
+                        <span>
+                            NÍVEL 01
+                        </span>
+
+                        <div
+                            class="experience-bar"
+                            aria-label="20 de 100 XP"
+                        >
+                            <span></span>
+                        </div>
+
+                        <span>
+                            20 / 100 XP
+                        </span>
+
+                    </footer>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <section class="progress section">
+
+            <div class="container">
+
+                <div class="progress__content">
+
+                    <span class="eyebrow">
+                        Sua fazenda
+                    </span>
+
+                    <h2>
+                        Comece com uma ruína.
+                        <span>Termine com um lar.</span>
+                    </h2>
+
+                    <p>
+                        Sua evolução dentro do jogo também muda o cenário ao seu redor. Cada conquista deixa o vale um pouco mais vivo.
+                    </p>
+
+                    <a href="#demo" class="button button--primary">
+                        Começar minha jornada
+                        <span aria-hidden="true">→</span>
+                    </a>
+
+                </div>
+
+                <figure class="progress__scene">
+
+                    <img
+                        src="assets/images/farm-evolution.png"
+                        alt="Evolução da fazenda do jogador"
+                    >
+
+                </figure>
+
+            </div>
+
+        </section>
+
+        <section id="contato" class="contact section">
+
+            <div class="container">
+
+                <header class="section-header">
+
+                    <span class="eyebrow">
+                        Entre em contato
+                    </span>
+
+                    <h2>
+                        Quer acompanhar
+                        <span>a construção do Vale?</span>
+                    </h2>
+
+                    <p>
+                        Envie uma mensagem para a equipe e acompanhe o desenvolvimento do projeto.
+                    </p>
+
+                </header>
+
+                <div class="contact__grid">
+
+                    <address class="contact__information">
+
+                        <div>
+
+                            <span class="contact__label">
+                                E-mail
+                            </span>
+
+                            <a href="mailto:contato@pixelvalleycode.com">
+                                contato@pixelvalleycode.com
+                            </a>
+
+                        </div>
+
+                        <div>
+
+                            <span class="contact__label">
+                                Comunidade
+                            </span>
+
+                            <a href="#">
+                                Discord
+                            </a>
+
+                        </div>
+
+                        <div>
+
+                            <span class="contact__label">
+                                Desenvolvimento
+                            </span>
+
+                            <a href="#">
+                                GitHub
+                            </a>
+
+                        </div>
+
+                        <div>
+
+                            <span class="contact__label">
+                                Redes sociais
+                            </span>
+
+                            <a href="#">
+                                Instagram
+                            </a>
+
+                        </div>
+
+                    </address>
+
+                    <form class="contact__form">
+
+                        <div class="form-field">
+
+                            <label for="name">
+                                Seu nome
+                            </label>
+
+                            <input
+                                id="name"
+                                name="name"
+                                type="text"
+                                placeholder="Como podemos te chamar?"
+                                autocomplete="name"
+                                required
+                            >
+
+                        </div>
+
+                        <div class="form-field">
+
+                            <label for="email">
+                                Seu e-mail
+                            </label>
+
+                            <input
+                                id="email"
+                                name="email"
+                                type="email"
+                                placeholder="voce@email.com"
+                                autocomplete="email"
+                                required
+                            >
+
+                        </div>
+
+                        <div class="form-field">
+
+                            <label for="message">
+                                Mensagem
+                            </label>
+
+                            <textarea
+                                id="message"
+                                name="message"
+                                rows="6"
+                                placeholder="Conte para a gente o que você achou..."
+                                required
+                            ></textarea>
+
+                        </div>
+
+                        <button
+                            type="submit"
+                            class="button button--primary"
+                        >
+                            Enviar mensagem
+                            <span aria-hidden="true">→</span>
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="cta">
+
+            <div class="container">
+
+                <div class="cta__content">
+
+                    <span class="eyebrow">
+                        O Vale está esperando
+                    </span>
+
+                    <h2>
+                        Sua próxima aventura
+                        <span>começa com uma linha.</span>
+                    </h2>
+
+                    <p>
+                        Aprenda programação, faça novos amigos e transforme uma fazenda esquecida em seu novo lar.
+                    </p>
+
+                    <a href="#demo" class="button button--primary">
+                        Jogar Demo
+                        <span aria-hidden="true">→</span>
+                    </a>
+
+                </div>
+
+                <figure class="cta__character">
+
+                    <img
+                        src="assets/images/player-friends.png"
+                        alt="Personagem principal acompanhado pelos moradores do vale"
+                    >
+
+                </figure>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+
+        <div class="container">
+
+            <div class="site-footer__main">
+
+                <a href="#home" class="logo">
+
+                    <span class="logo__pixel">PV</span>
+
+                    <span class="logo__text">
+                        Pixel Valley
+                        <strong>Code</strong>
+                    </span>
+
+                </a>
+
+                <p>
+                    Aprender programação nunca foi tão divertido.
+                </p>
+
+            </div>
+
+            <nav aria-label="Navegação do rodapé">
+
+                <ul>
+
+                    <li>
+                        <a href="#home">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#sobre">
+                            Sobre
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#gameplay">
+                            Gameplay
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#personagens">
+                            Personagens
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#demo">
+                            Demo
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#contato">
+                            Contato
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+            <div class="site-footer__bottom">
+
+                <small>
+                    © 2026 Pixel Valley Code. Todos os direitos reservados.
+                </small>
+
+                <a href="#home">
+                    Voltar ao topo ↑
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
