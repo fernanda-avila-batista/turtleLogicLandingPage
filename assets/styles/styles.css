@@ -472,7 +472,6 @@ figure {
     z-index: 2; /* deixa os personagens acima do filtro escuro. */
     width: 90px; /* largura base dos personagens. */
     max-width: none; /* sem limite de largura. */
-    image-rendering: pixelated; /* deixa a imagem com aspecto pixelado. */
     filter: drop-shadow(4px 8px 0 rgba(7, 18, 8, 0.25)); /* cria sombra sob os personagens. */
     transition: transform 300ms ease; /* suaviza o movimento ao hover. */
 }
@@ -556,7 +555,6 @@ figure {
     background: #091a0d; /* fundo escuro da caixa da imagem. */
     box-shadow:
         0 30px 60px rgba(0, 0, 0, 0.28),
-        inset 0 0 0 1px rgba(255, 255, 255, 0.04); /* cria profundidade e detalhe. */
     aspect-ratio: 1 / 1; /* força a imagem a ficar quadrada. */
 }
 
