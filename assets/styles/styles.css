@@ -326,6 +326,7 @@ figure {
 }
 
 /* ---------- HERO / APRESENTAÇÃO ---------- */
+/* Classe do bloco principal do banner inicial da página. */
 .apresentacao {
     position: relative; /* deixa o bloco como referência para elementos absolutos. */
     min-height: 100svh; /* faz a seção ocupar a altura da tela. */
@@ -333,6 +334,7 @@ figure {
     background: linear-gradient(180deg, #0c5c3b 0%, #0e4f3a 100%); /* cria o fundo verde do topo. */
 }
 
+/* Layout do texto e da imagem do banner em duas colunas. */
 .conjunto-apresentacao {
     position: relative; /* usa referência para empilhar elementos. */
     z-index: 2; /* coloca o conteúdo acima da imagem de fundo. */
@@ -352,6 +354,7 @@ figure {
     max-width: 650px; /* limita a largura da área de texto. */
 }
 
+/* Título grande do banner principal. */
 .titulo-apresentacao {
     max-width: 720px; /* limita o tamanho da linha do título. */
     margin-top: 22px; /* espaço acima do título. */
@@ -416,6 +419,7 @@ figure {
 }
 
 /* ---------- IMAGEM DO BANNER E PERSONAGENS ---------- */
+/* Container da imagem de fundo e dos personagens do banner. */
 .cena-apresentacao {
     position: relative; /* referência para posicionar tudo dentro. */
     width: 100%; /* ocupa toda a largura. */
@@ -462,6 +466,7 @@ figure {
     opacity: 1; /* deixa a imagem totalmente visível. */
 }
 
+/* Classe de cada personagem que aparece sobre a imagem do banner. */
 .personagem-apresentacao {
     position: absolute; /* posiciona cada personagem sobre a cena. */
     z-index: 2; /* deixa os personagens acima do filtro escuro. */
@@ -520,6 +525,7 @@ figure {
         var(--bg); /* cria um brilho sutil e mantém o fundo escuro. */
 }
 
+/* Bloco de cada item da seção de história. */
 .linha-historia {
     display: grid; /* usa grid para dividir texto e imagem. */
     grid-template-columns: 0.8fr 1.2fr; /* define a proporção do layout. */
@@ -629,6 +635,7 @@ figure {
     counter-reset: etapas; /* prepara contadores para as etapas. */
 }
 
+/* Cada card da seção de como funciona. */
 .card-etapa {
     position: relative; /* base para elementos extras. */
     min-height: 350px; /* altura mínima dos cards. */
@@ -726,12 +733,14 @@ figure {
     background: var(--bg); /* fundo escuro da seção. */
 }
 
+/* Grid com todos os cards de personagens. */
 .lista-personagens {
     display: grid; /* usa grid para os cards. */
     grid-template-columns: repeat(2, 1fr); /* duas colunas iguais. */
     gap: 20px; /* espaço entre os cards. */
 }
 
+/* Card individual de cada personagem. */
 .card-personagem {
     position: relative; /* base para elementos posicionados. */
     display: grid; /* organiza imagem e texto em colunas. */
@@ -855,6 +864,7 @@ figure {
         var(--bg-soft); /* cria um brilho no topo e mantém o fundo escuro. */
 }
 
+/* Caixa visual da seção de desafio. */
 .janela-demo {
     max-width: 900px; /* limita a largura da janela. */
     margin-inline: auto; /* centraliza no meio. */
@@ -943,6 +953,7 @@ figure {
     color: var(--lime); /* destaca elementos em verde. */
 }
 
+/* Bloco com as opções de resposta do desafio. */
 .formulario-desafio fieldset {
     display: grid; /* usa grid para as opções. */
     grid-template-columns: repeat(2, 1fr); /* duas colunas iguais. */
@@ -1229,6 +1240,7 @@ figure {
     color: var(--lime); /* deixa verde no hover. */
 }
 
+/* Formulário de contato da página. */
 .formulario-contato {
     display: flex; /* organiza os campos em coluna. */
     flex-direction: column; /* empilha os itens verticalmente. */
