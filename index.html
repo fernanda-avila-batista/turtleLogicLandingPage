@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<!--
+    O head guarda as informações que o navegador usa para interpretar
+    a página: charset, responsividade, descrição, título e links externos.
+-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="TurtleLogic é uma aventura em pixel art onde você aprende programação enquanto reconstrói uma fazenda e transforma o vale."
+    >
+
+    <meta name="theme-color" content="#0F2F0B">
+
+    <title>TurtleLogic — Aprenda. Explore. Construa.</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Silkscreen:wght@400;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="../assets/styles/styles.css">
+</head>
+
+<body>
+
+    <!--
+        Parte de cima do site com logo, menu e botão principal.
+    -->
+    <header class="cabecalho">
+
+        <div class="conteiner">
+
+            <!--
+                Logo da marca, que leva para o início da página.
+            -->
+            <a href="#inicio" class="marca" aria-label="TurtleLogic - início">
+
+                <img
+                    src="../assets/logo.png"
+                    alt="TurtleLogic"
+                    class="marca-logo"
+                >
+
+            </a>
+
+            <!--
+                Menu com os links das seções da página.
+            -->
+            <nav aria-label="Navegação principal">
+
+                <ul class="menu-lista">
+
+                    <li>
+                        <a href="#inicio" class="link-menu">
+                            Início
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#sobre" class="link-menu">
+                            Sobre
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#como-funciona" class="link-menu">
+                            Como funciona
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#personagens" class="link-menu">
+                            Personagens
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#demonstracao" class="link-menu">
+                            Demonstração
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#contato" class="link-menu">
+                            Contato
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+            <!--
+                Botão para ir direto para a demonstração.
+            -->
+            <a href="#demonstracao" class="botao botao--pequeno">
+                Jogar demonstração
+            </a>
+
+            <!--
+                Botão de menu para telas menores.
+            -->
+            <button
+                type="button"
+                class="menu-botao"
+                aria-label="Abrir menu"
+                aria-expanded="false"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+
+    </header>
+
+    <main>
+
+        <!--
+            Primeira parte da página, com a mensagem principal e a imagem do banner.
+        -->
+        <section id="inicio" class="apresentacao">
+
+            <div class="conteiner conjunto-apresentacao">
+
+                <article class="conteudo-apresentacao">
+
+                    <!--
+                        Texto pequeno acima do título.
+                    -->
+                    <span class="etiqueta">
+                        A jornada começa com lógica
+                    </span>
+
+                    <!--
+                        Título principal da página.
+                    -->
+                    <h1 class="titulo-apresentacao">
+                        Cada linha de código
+                        <span>desbloqueia um novo mundo.</span>
+                    </h1>
+
+                    <!--
+                        Texto explicando a ideia do jogo.
+                    -->
+                    <p class="texto-apresentacao">
+                        No TurtleLogic, você aprende programação enquanto reativa uma fazenda abandonada, resolve desafios e transforma o vale em um lugar cheio de vida.
+                    </p>
+
+                    <!--
+                        Botões para começar ou explorar mais.
+                    -->
+                    <div class="acoes-apresentacao">
+
+                        <a href="#demonstracao" class="botao botao--primario">
+                            Jogar demonstração
+                        </a>
+
+                        <a href="#sobre" class="botao botao--secundario">
+                            Explorar o Vale
+                        </a>
+
+                    </div>
+
+                    <!--
+                        Dados rápidos sobre o projeto.
+                    -->
+                    <ul class="estatisticas-apresentacao" aria-label="Informações sobre o jogo">
+
+                        <li>
+                            <strong>04</strong>
+                            <span>Mentores</span>
+                        </li>
+
+                        <li>
+                            <strong>30+</strong>
+                            <span>Desafios</span>
+                        </li>
+
+                        <li>
+                            <strong>∞</strong>
+                            <span>Aventuras</span>
+                        </li>
+
+                    </ul>
+
+                </article>
+
+                <!--
+                    Cena com a imagem de fundo e os personagens.
+                -->
+                <figure class="cena-apresentacao">
+
+                    <img
+                        src="../assets/img-banner.png"
+                        alt=""
+                        class="img-banner"
+                        aria-hidden="true"
+                    >
+
+                    <img
+                        src="../assets/donatelo.png"
+                        alt="Donatelo"
+                        class="personagem-apresentacao personagem-apresentacao--donatelo"
+                    >
+
+                    <img
+                        src="../assets/frida.png"
+                        alt="Frida"
+                        class="personagem-apresentacao personagem-apresentacao--frida"
+                    >
+
+                    <img
+                        src="../assets/koda.png"
+                        alt="Koda"
+                        class="personagem-apresentacao personagem-apresentacao--koda"
+                    >
+
+                    <img
+                        src="../assets/agatha.png"
+                        alt="Agatha"
+                        class="personagem-apresentacao personagem-apresentacao--agatha"
+                    >
+
+
+                </figure>
+
+            </div>
+
+        </section>
+
+        <!--
+            Seção da história, mostrando a fazenda abandonada e o começo da jornada.
+        -->
+        <section id="sobre" class="sessao">
+
+            <div class="conteiner">
+
+                <header class="cabecalho-sessao">
+
+                    <span class="etiqueta">
+                        Sua história começa aqui
+                    </span>
+
+                    <h2>
+                        Uma fazenda.
+                        <span>Uma nova missão.</span>
+                    </h2>
+
+                    <p>
+                        Você chegou ao Vale TurtleLogic com uma propriedade esquecida e uma chance de começar tudo outra vez.
+                    </p>
+
+                </header>
+
+                <div class="linha-historia">
+
+                    <article class="texto-historia">
+
+                        <span class="numero-historia">
+                            01
+                        </span>
+
+                        <h3>
+                            Você herdou uma fazenda em ruínas.
+                        </h3>
+
+                        <p>
+                            O lugar precisa de muito trabalho. A cabana está destruída, os caminhos desapareceram e os antigos equipamentos já não funcionam.
+                        </p>
+
+                        <p>
+                            Mas com lógica, curiosidade e ajuda dos moradores, o vale pode voltar a florescer.
+                        </p>
+
+                        <a href="#personagens" class="link-texto">
+                            Conheça seus companheiros
+                        </a>
+
+                    </article>
+
+                    <figure class="imagem-historia">
+
+                        <img
+                            src="../assets/casaruina.png"
+                            alt="Cabana antiga e abandonada da fazenda"
+                        >
+
+                        <figcaption>
+                            Tudo começa com uma pequena cabana.
+                        </figcaption>
+
+                    </figure>
+
+                </div>
+
+                <div class="linha-historia invertida">
+
+                    <article class="texto-historia">
+
+                        <span class="numero-historia">
+                            02
+                        </span>
+
+                        <h3>
+                            Aprenda programação com os moradores do vale.
+                        </h3>
+
+                        <p>
+                            Cada personagem do TurtleLogic ensina uma nova forma de pensar: lógica, sintaxe, conceitos e dados.
+                        </p>
+
+                        <p>
+                            Resolva seus desafios e transforme o conhecimento em melhorias reais para a fazenda.
+                        </p>
+
+                        <a href="#como-funciona" class="link-texto">
+                            Descobrir como funciona
+                        </a>
+
+                    </article>
+
+                    <figure class="imagem-historia">
+
+                        <img
+                            src="../assets/vila.png"
+                            alt="Vale TurtleLogic com os moradores e construções"
+                        >
+
+                        <figcaption>
+                            O vale está cheio de histórias para descobrir.
+                        </figcaption>
+
+                    </figure>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!--
+            Seção que explica como o jogo funciona em passos simples.
+        -->
+        <section id="como-funciona" class="sessao">
+
+            <div class="conteiner">
+
+                <header class="cabecalho-sessao cabecalho-sessao--centro">
+
+                    <span class="etiqueta">
+                        Como funciona
+                    </span>
+
+                    <h2>
+                        Aprenda.
+                        <span>Jogue. Reconstrua.</span>
+                    </h2>
+
+                    <p>
+                        O conhecimento que você conquista dentro dos desafios também transforma o mundo ao seu redor.
+                    </p>
+
+                </header>
+
+                <ol class="etapas">
+
+                    <li class="card-etapa">
+
+                        <span class="numero-etapa">
+                            01
+                        </span>
+
+                        <div class="icone-etapa" aria-hidden="true">
+                            ◈
+                        </div>
+
+                        <h3>
+                            Aprenda
+                        </h3>
+
+                        <p>
+                            Conheça conceitos de lógica, sintaxe e programação através de pequenas missões.
+                        </p>
+
+                    </li>
+
+                    <li class="card-etapa">
+
+                        <span class="numero-etapa">
+                            02
+                        </span>
+
+                        <div class="icone-etapa" aria-hidden="true">
+                            &lt;/&gt;
+                        </div>
+
+                        <h3>
+                            Resolva
+                        </h3>
+
+                        <p>
+                            Complete códigos, responda perguntas e coloque seus conhecimentos à prova.
+                        </p>
+
+                    </li>
+
+                    <li class="card-etapa">
+
+                        <span class="numero-etapa">
+                            03
+                        </span>
+
+                        <div class="icone-etapa" aria-hidden="true">
+                            +
+                        </div>
+
+                        <h3>
+                            Reconstrua
+                        </h3>
+
+                        <p>
+                            Use as recompensas das missões para reconstruir sua casa e transformar a fazenda.
+                        </p>
+
+                    </li>
+
+                </ol>
+
+                <aside class="premio">
+
+                    <div>
+
+                        <span class="etiqueta">
+                            Sua evolução
+                        </span>
+
+                        <h3>
+                            Quanto mais você aprende, mais o vale cresce.
+                        </h3>
+
+                        <p>
+                            Novas construções, ferramentas, áreas e desafios aparecem conforme sua jornada avança.
+                        </p>
+
+                    </div>
+
+                    <ul>
+
+                        <li>
+                            <span aria-hidden="true">✦</span>
+                            Experiência
+                        </li>
+
+                        <li>
+                            <span aria-hidden="true">✦</span>
+                            Novas áreas
+                        </li>
+
+                        <li>
+                            <span aria-hidden="true">✦</span>
+                            Construções
+                        </li>
+
+                        <li>
+                            <span aria-hidden="true">✦</span>
+                            Amizades
+                        </li>
+
+                    </ul>
+
+                </aside>
+
+            </div>
+
+        </section>
+
+        <!--
+            Seção dos personagens do jogo.
+        -->
+        <section id="personagens" class="sessao">
+
+            <div class="conteiner">
+
+                <header class="cabecalho-sessao">
+
+                    <span class="etiqueta">
+                        Conheça o Vale
+                    </span>
+
+                    <h2>
+                        Você não vai
+                        <span>aprender sozinho.</span>
+                    </h2>
+
+                    <p>
+                        Quatro moradores. Quatro personalidades. Quatro formas diferentes de aprender programação.
+                    </p>
+
+                </header>
+
+                <div class="lista-personagens">
+
+                    <article class="card-personagem">
+
+                        <figure>
+
+                            <img
+                                src="../assets/donatelo.png"
+                                alt="Donatelo, mentor do Vale TurtleLogic"
+                            >
+
+                        </figure>
+
+                        <div class="corpo-personagem">
+
+                            <span class="cargo-personagem">
+                                Mentor
+                            </span>
+
+                            <h3>
+                                Donatelo
+                            </h3>
+
+                            <p>
+                                O velho amigo que prepara você para os desafios do vale.
+                            </p>
+
+                            <dl>
+
+                                <div>
+                                    <dt>Especialidade</dt>
+                                    <dd>Lógica</dd>
+                                </div>
+
+                                <div>
+                                    <dt>Desafios</dt>
+                                    <dd>Ensino e dúvidas</dd>
+                                </div>
+
+                            </dl>
+
+                        </div>
+
+                    </article>
+
+                    <article class="card-personagem card-personagem--frida">
+
+                        <figure>
+
+                            <img
+                                src="../assets/frida.png"
+                                alt="Frida, a vaca programadora"
+                            >
+
+                        </figure>
+
+                        <div class="corpo-personagem">
+
+                            <span class="cargo-personagem">
+                                Programadora
+                            </span>
+
+                            <h3>
+                                Frida
+                            </h3>
+
+                            <p>
+                                Uma cozinheira paciente que adora resolver problemas linha por linha.
+                            </p>
+
+                            <dl>
+
+                                <div>
+                                    <dt>Especialidade</dt>
+                                    <dd>Sintaxe</dd>
+                                </div>
+
+                                <div>
+                                    <dt>Desafios</dt>
+                                    <dd>Preencher lacunas</dd>
+                                </div>
+
+                            </dl>
+
+                        </div>
+
+                    </article>
+
+                    <article class="card-personagem card-personagem--koda">
+
+                        <figure>
+
+                            <img
+                                src="../assets/koda.png"
+                                alt="Koda, o urso inventor"
+                            >
+
+                        </figure>
+
+                        <div class="corpo-personagem">
+
+                            <span class="cargo-personagem">
+                                Inventor
+                            </span>
+
+                            <h3>
+                                Koda
+                            </h3>
+
+                            <p>
+                                Um urso inventor que constrói robôs e bugigangas para toda a comunidade.
+                            </p>
+
+                            <dl>
+
+                                <div>
+                                    <dt>Especialidade</dt>
+                                    <dd>Conceitos</dd>
+                                </div>
+
+                                <div>
+                                    <dt>Desafios</dt>
+                                    <dd>Verdadeiro ou falso</dd>
+                                </div>
+
+                            </dl>
+
+                        </div>
+
+                    </article>
+
+                    <article class="card-personagem card-personagem--agatha">
+
+                        <figure>
+
+                            <img
+                                src="../assets/agatha.png"
+                                alt="Agatha, a capivara da praia"
+                            >
+
+                        </figure>
+
+                        <div class="corpo-personagem">
+
+                            <span class="cargo-personagem">
+                                Exploradora
+                            </span>
+
+                            <h3>
+                                Agatha
+                            </h3>
+
+                            <p>
+                                Uma capivara tranquila que ajuda a comunidade com seus conhecimentos sobre dados.
+                            </p>
+
+                            <dl>
+
+                                <div>
+                                    <dt>Especialidade</dt>
+                                    <dd>Dados</dd>
+                                </div>
+
+                                <div>
+                                    <dt>Desafios</dt>
+                                    <dd>Múltipla escolha</dd>
+                                </div>
+
+                            </dl>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!--
+            Seção com o mini desafio da página.
+        -->
+        <section id="demonstracao" class="sessao">
+
+            <div class="conteiner">
+
+                <header class="cabecalho-sessao cabecalho-sessao--centro">
+
+                    <span class="etiqueta">
+                        Primeira missão
+                    </span>
+
+                    <h2>
+                        Coloque seu conhecimento
+                        <span>à prova.</span>
+                    </h2>
+
+                    <p>
+                        Experimente um pequeno desafio inspirado nas missões do jogo.
+                    </p>
+
+                </header>
+
+                <article class="janela-demo">
+
+                    <header class="cabecalho-demo">
+
+                        <div class="pontos-janela" aria-hidden="true">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                        <span>
+                            MISSÃO_001
+                        </span>
+
+                        <span>
+                            +20 XP
+                        </span>
+
+                    </header>
+
+                    <div class="corpo-demo">
+
+                        <div class="desafio">
+
+                            <span class="etiqueta-desafio">
+                                DESAFIO DE SINTAXE
+                            </span>
+
+                            <h3>
+                                Complete o código.
+                            </h3>
+
+                            <pre><code>for (let i = 0; i &lt; <span>___</span>; i++) {
+    console.log(i);
+}</code></pre>
+
+                            <form class="formulario-desafio">
+
+                                <fieldset>
+
+                                    <legend>
+                                        Qual valor faz o loop imprimir 0, 1, 2, 3 e 4?
+                                    </legend>
+
+                                    <label>
+                                        <input
+                                            type="radio"
+                                            name="resposta-desafio"
+                                            value="5"
+                                        >
+                                        <span>5</span>
+                                    </label>
+
+                                    <label>
+                                        <input
+                                            type="radio"
+                                            name="resposta-desafio"
+                                            value="10"
+                                        >
+                                        <span>10</span>
+                                    </label>
+
+                                    <label>
+                                        <input
+                                            type="radio"
+                                            name="resposta-desafio"
+                                            value="100"
+                                        >
+                                        <span>100</span>
+                                    </label>
+
+                                    <label>
+                                        <input
+                                            type="radio"
+                                            name="resposta-desafio"
+                                            value="i"
+                                        >
+                                        <span>i</span>
+                                    </label>
+
+                                </fieldset>
+
+                                <button
+                                    type="button"
+                                    class="botao botao--primario"
+                                    id="verificar-desafio"
+                                >
+                                    Verificar resposta
+                                </button>
+
+                            </form>
+
+                            <output
+                                id="resultado-desafio"
+                                class="resultado-desafio"
+                                aria-live="polite"
+                            ></output>
+
+                        </div>
+
+                    </div>
+
+                    <footer class="rodape-demo">
+
+                        <span>
+                            NÍVEL 01
+                        </span>
+
+                        <div
+                            class="barra-experiencia"
+                            aria-label="20 de 100 XP"
+                        >
+                            <span></span>
+                        </div>
+
+                        <span>
+                            20 / 100 XP
+                        </span>
+
+                    </footer>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <!--
+            Mostra a fazenda antes e depois.
+        -->
+        <section class="sessao progresso">
+
+            <div class="conteiner">
+
+                <div class="conteudo-progresso">
+
+                    <span class="etiqueta">
+                        Sua fazenda
+                    </span>
+
+                    <h2>
+                        Comece com uma ruína.
+                        <span>Termine com um lar.</span>
+                    </h2>
+
+                    <p>
+                        Sua evolução dentro do jogo também muda o cenário ao seu redor. Cada conquista deixa o vale um pouco mais vivo.
+                    </p>
+
+                    <a href="#demonstracao" class="botao botao--primario">
+                        Começar minha jornada
+                    </a>
+
+                </div>
+
+                <div class="telas-progresso" aria-label="Comparação da fazenda antes e depois">
+
+                    <div class="celular">
+                        <div class="tela-celular">
+                            <img
+                                src="../assets/casaruina.png"
+                                alt="Fazenda antes da reconstrução"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="celular celular--depois">
+                        <div class="tela-celular">
+                            <img
+                                src="../assets/depois.png"
+                                alt="Fazenda depois da reconstrução"
+                            >
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!--
+            Seção de contato com a equipe.
+        -->
+        <section id="contato" class="sessao contato">
+
+            <div class="conteiner">
+
+                <header class="cabecalho-sessao">
+
+                    <span class="etiqueta">
+                        Entre em contato
+                    </span>
+
+                    <h2>
+                        Quer acompanhar
+                        <span>a construção do Vale?</span>
+                    </h2>
+
+                    <p>
+                        Envie uma mensagem para a equipe e acompanhe o desenvolvimento do projeto.
+                    </p>
+
+                </header>
+
+                <div class="grade-contato">
+
+                    <address class="info-contato">
+
+                        <div>
+
+                            <span class="etiqueta-contato">
+                                E-mail
+                            </span>
+
+                            <a href="mailto:contato@turtlelogic.com">
+                                contato@turtlelogic.com
+                            </a>
+
+                        </div>
+
+                        <div>
+
+                            <span class="etiqueta-contato">
+                                Comunidade
+                            </span>
+
+                            <a href="#">
+                                Discord
+                            </a>
+
+                        </div>
+
+                        <div>
+
+                            <span class="etiqueta-contato">
+                                Desenvolvimento
+                            </span>
+
+                            <a href="#">
+                                GitHub
+                            </a>
+
+                        </div>
+
+                        <div>
+
+                            <span class="etiqueta-contato">
+                                Redes sociais
+                            </span>
+
+                            <a href="#">
+                                Instagram
+                            </a>
+
+                        </div>
+
+                    </address>
+
+                    <form class="formulario-contato">
+
+                        <div class="campo-formulario">
+
+                            <label for="name">
+                                Seu nome
+                            </label>
+
+                            <input
+                                id="name"
+                                name="name"
+                                type="text"
+                                placeholder="Como podemos te chamar?"
+                                autocomplete="name"
+                                required
+                            >
+
+                        </div>
+
+                        <div class="campo-formulario">
+
+                            <label for="email">
+                                Seu e-mail
+                            </label>
+
+                            <input
+                                id="email"
+                                name="email"
+                                type="email"
+                                placeholder="voce@email.com"
+                                autocomplete="email"
+                                required
+                            >
+
+                        </div>
+
+                        <div class="campo-formulario">
+
+                            <label for="message">
+                                Mensagem
+                            </label>
+
+                            <textarea
+                                id="message"
+                                name="message"
+                                rows="6"
+                                placeholder="Conte para a gente o que você achou..."
+                                required
+                            ></textarea>
+
+                        </div>
+
+                        <button
+                            type="submit"
+                            class="botao botao--primario"
+                        >
+                            Enviar mensagem
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section>
+
+            <div class="conteiner">
+
+                <div class="conteudo-cta">
+
+                    <span class="etiqueta">
+                        O Vale está esperando
+                    </span>
+
+                    <h2>
+                        Sua próxima aventura
+                        <span>começa com uma linha de código.</span>
+                    </h2>
+
+                    <p>
+                        Aprenda programação, faça novos amigos e transforme uma fazenda esquecida em um lar cheio de possibilidades.
+                    </p>
+
+                    <a href="#demonstracao" class="botao botao--primario">
+                        Jogar demonstração
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!--
+        Rodapé final da página.
+    -->
+    <footer class="rodape">
+
+        <div class="conteiner">
+
+            <div class="rodape-principal">
+
+                <p>
+                    Aprender programação nunca foi tão divertido.
+                </p>
+
+            </div>
+
+            <nav aria-label="Navegação do rodapé">
+
+                <ul>
+
+                    <li>
+                        <a href="#inicio">
+                            Início
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#sobre">
+                            Sobre
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#como-funciona">
+                            Como funciona
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#personagens">
+                            Personagens
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#demonstracao">
+                            Demonstração
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#contato">
+                            Contato
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+            <div class="rodape-inferior">
+
+                <small>
+                    © 2026 TurtleLogic. Todos os direitos reservados.
+                </small>
+
+                <a href="#inicio">
+                    Voltar ao topo ↑
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <script>
+        /*
+            Este bloco de JavaScript valida a resposta do desafio.
+            Ele procura o botão de verificação, verifica a alternativa marcada
+            e mostra uma mensagem de feedback para a pessoa que está jogando.
+        */
+        const verificarDesafio = document.getElementById('verificar-desafio');
+        const resultadoDesafio = document.getElementById('resultado-desafio');
+
+        /*
+            A condição abaixo protege o código para que ele só execute se o botão
+            e a área de resposta existirem na página.
+        */
+        if (verificarDesafio && resultadoDesafio) {
+            /*
+                Este evento acontece quando a pessoa clica em "Verificar resposta".
+                A função verifica qual opção foi marcada e responde conforme o valor
+                escolhido.
+            */
+            verificarDesafio.addEventListener('click', () => {
+                /*
+                    selected busca o input radio que foi selecionado pelo usuário.
+                    O seletor usa o atributo name da pergunta, que é o mesmo para todas
+                    as alternativas do desafio.
+                */
+                const selected = document.querySelector('input[name="resposta-desafio"]:checked');
+
+                /*
+                    Se nenhum item for marcado, a página mostra uma mensagem pedindo
+                    que a pessoa escolha uma opção antes de continuar.
+                */
+                if (!selected) {
+                    resultadoDesafio.textContent = 'Escolha uma resposta antes de verificar.';
+                    resultadoDesafio.style.color = '#f4f2dc';
+                    return;
+                }
+
+                /*
+                    isCorrect compara o valor do item escolhido com a resposta correta.
+                    Nesse caso, o valor '5' é a resposta certa porque o loop imprime
+                    números de 0 até 4 quando a condição é i < 5.
+                */
+                const isCorrect = selected.value === '5';
+
+                /*
+                    Se o valor bater, a página mostra feedback positivo e encerra a função.
+                */
+                if (isCorrect) {
+                    resultadoDesafio.textContent = 'Resposta correta! Você avançou no loop.';
+                    resultadoDesafio.style.color = '#c1ff72';
+                    return;
+                }
+
+                /*
+                    Se a resposta estiver errada, a mensagem explica o motivo e mostra
+                    que o loop precisa terminar em 5 para imprimir até 4.
+                */
+                resultadoDesafio.textContent = 'Quase lá! O loop precisa parar em 5 para imprimir 0 até 4.';
+                resultadoDesafio.style.color = '#ffb4a2';
+            });
+        }
+    </script>
+
+</body>
+
+</html>
