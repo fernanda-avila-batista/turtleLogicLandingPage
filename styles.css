@@ -1,1303 +1,1567 @@
 /* ---------- VARIÁVEIS GLOBAIS ---------- */
 :root {
-    --lime: #c1ff72; /* verde principal usado em destaques, botões e linhas. */
-    --green: #105439; /* tom verde mais escuro usado em blocos e fundo. */
-    --dark-green: #0f2f0b; /* verde escuro para textos e botões principais. */
-    --purple: #150a5d; /* roxo usado em seções de destaque. */
+    --lime: #c1ff72;
+    --green: #105439;
+    --dark-green: #0f2f0b;
+    --purple: #150a5d;
 
-    --cream: #f4f2dc; /* cor de texto clara e suave. */
-    --white: #ffffff; /* branco puro. */
-    --muted: #a9b8a3; /* cinza-esverdeado usado em textos secundários. */
-    --line: rgba(193, 255, 114, 0.14); /* linha fina em bordas e separadores. */
+    --cream: #f4f2dc;
+    --white: #ffffff;
+    --muted: #a9b8a3;
+    --line: rgba(193, 255, 114, 0.14);
 
-    --bg: #071208; /* fundo principal da página. */
-    --bg-soft: #0b1b0d; /* fundo mais claro usado em seções. */
-    --bg-card: #102414; /* fundo de cards e blocos internos. */
+    --bg: #071208;
+    --bg-soft: #0b1b0d;
+    --bg-card: #102414;
 
-    --font-base: "Inter", sans-serif; /* fonte principal do texto. */
-    --font-pixel: "Silkscreen", monospace; /* fonte estilizada para títulos e detalhes. */
+    --font-base: "Inter", sans-serif;
+    --font-pixel: "Silkscreen", monospace;
 
-    --container: 1180px; /* largura máxima da área central do site. */
+    --container: 1180px;
 
-    --radius-sm: 12px; /* borda pequena. */
-    --radius-md: 20px; /* borda média. */
-    --radius-lg: 32px; /* borda grande. */
-    --radius-xl: 44px; /* borda bem larga. */
+    --radius-sm: 12px;
+    --radius-md: 20px;
+    --radius-lg: 32px;
+    --radius-xl: 44px;
 
-    --shadow: 0 24px 80px rgba(0, 0, 0, 0.25); /* sombra padrão dos cards. */
+    --shadow: 0 24px 80px rgba(0, 0, 0, 0.25);
 
-    --transition: 220ms ease; /* tempo da transição de hover e animações. */
+    --transition: 220ms ease;
 }
 
 /* ---------- RESET BÁSICO ---------- */
 * {
-    margin: 0; /* remove a margem padrão dos elementos. */
-    padding: 0; /* remove o espaçamento interno padrão. */
-    box-sizing: border-box; /* faz o tamanho incluir bordas e padding. */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 html {
-    scroll-behavior: smooth; /* rolagem suave ao navegar por âncoras. */
-    scroll-padding-top: 90px; /* evita que o header cubra o topo ao rolar. */
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
 }
 
 body {
-    min-width: 320px; /* impede que a página fique muito estreita. */
-    background: var(--bg); /* fundo geral escuro. */
-    color: var(--cream); /* cor padrão do texto. */
-    font-family: var(--font-base); /* fonte base do site. */
-    line-height: 1.6; /* altura de linha para leitura confortável. */
-    overflow-x: hidden; /* evita barra horizontal indesejada. */
+    min-width: 320px;
+    background: var(--bg);
+    color: var(--cream);
+    font-family: var(--font-base);
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
-body::selection {
-    background: var(--lime); /* fundo da seleção de texto em verde. */
-    color: var(--dark-green); /* texto da seleção em verde escuro. */
+::selection {
+    background: var(--lime);
+    color: var(--dark-green);
 }
 
 img {
-    display: block; /* faz a imagem ocupar só o espaço do conteúdo. */
-    max-width: 100%; /* evita estourar a largura do container. */
+    display: block;
+    max-width: 100%;
 }
 
 button,
 input,
 textarea {
-    font: inherit; /* herda a fonte do pai para manter a consistência. */
+    font: inherit;
 }
 
 button {
-    border: 0; /* remove a borda padrão de botão. */
+    border: 0;
 }
 
 a {
-    color: inherit; /* herda a cor do texto do pai. */
-    text-decoration: none; /* remove o sublinhado dos links. */
+    color: inherit;
+    text-decoration: none;
 }
 
 ul,
 ol {
-    list-style: none; /* remove marcadores de lista. */
+    list-style: none;
 }
 
 figure {
-    margin: 0; /* remove a margem padrão de figure. */
+    margin: 0;
 }
 
 /* ---------- ESTRUTURA GERAL ---------- */
 .conteiner {
-    width: min(calc(100% - 40px), var(--container)); /* limita a largura central do conteúdo. */
-    margin-inline: auto; /* centraliza horizontalmente. */
+    width: min(calc(100% - 40px), var(--container));
+    margin-inline: auto;
 }
 
 .sessao {
-    position: relative; /* permite posicionar elementos filhos com referência a esta seção. */
-    padding: clamp(90px, 10vw, 150px) 0; /* define o espaço vertical da seção. */
+    position: relative;
+    padding: clamp(90px, 10vw, 150px) 0;
 }
 
 .cabecalho-sessao {
-    max-width: 720px; /* limita a largura do texto do cabeçalho. */
-    margin-bottom: 70px; /* espaço abaixo do título da seção. */
+    max-width: 720px;
+    margin-bottom: 70px;
 }
 
 .cabecalho-sessao--centro {
-    margin-inline: auto; /* centraliza o bloco. */
-    text-align: center; /* alinha o texto no centro. */
+    margin-inline: auto;
+    text-align: center;
 }
 
 .cabecalho-sessao h2 {
-    margin-top: 18px; /* espaço do texto da etiqueta para o título. */
-    color: var(--white); /* cor branca do título. */
-    font-size: clamp(2.3rem, 5vw, 4.5rem); /* tamanho responsivo do título. */
-    font-weight: 800; /* deixa o texto mais forte. */
-    line-height: 0.98; /* aproxima as linhas do título. */
-    letter-spacing: -0.055em; /* deixa as letras mais próximas umas das outras. */
+    margin-top: 18px;
+    color: var(--white);
+    font-size: clamp(2.3rem, 5vw, 4.5rem);
+    font-weight: 800;
+    line-height: 0.98;
+    letter-spacing: -0.055em;
 }
 
 .cabecalho-sessao h2 span {
-    display: block; /* faz a segunda parte do título ficar em linha separada. */
-    color: var(--lime); /* destaca a segunda parte em verde. */
+    display: block;
+    color: var(--lime);
 }
 
 .cabecalho-sessao p {
-    max-width: 600px; /* limita o tamanho do parágrafo. */
-    margin-top: 24px; /* espaço entre o título e o texto. */
-    color: var(--muted); /* texto secundário em tom acinzentado. */
-    font-size: 1.05rem; /* tamanho do texto. */
+    max-width: 600px;
+    margin-top: 24px;
+    color: var(--muted);
+    font-size: 1.05rem;
 }
 
 .cabecalho-sessao--centro p {
-    margin-inline: auto; /* centraliza o parágrafo. */
+    margin-inline: auto;
 }
 
 .etiqueta {
-    display: inline-flex; /* deixa o texto e o ponto na mesma linha. */
-    align-items: center; /* alinha verticalmente. */
-    gap: 10px; /* espaço entre o ponto e o texto. */
-    color: var(--lime); /* cor verde principal. */
-    font-family: var(--font-pixel); /* fonte pixel para o estilo. */
-    font-size: 0.7rem; /* tamanho pequeno. */
-    line-height: 1.5; /* altura confortável para a linha. */
-    letter-spacing: 0.04em; /* separa levemente as letras. */
-    text-transform: uppercase; /* deixa em maiúsculas. */
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--lime);
+    font-family: var(--font-pixel);
+    font-size: 0.7rem;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
 }
 
 .etiqueta::before {
-    width: 8px; /* tamanho do ponto visual. */
-    height: 8px; /* altura do ponto. */
-    background: var(--lime); /* pinta o ponto em verde. */
-    box-shadow: 4px 4px 0 rgba(193, 255, 114, 0.2); /* cria um leve brilho ao redor. */
-    content: ""; /* cria o elemento visual do pseudo-elemento. */
+    width: 8px;
+    height: 8px;
+    background: var(--lime);
+    box-shadow: 4px 4px 0 rgba(193, 255, 114, 0.2);
+    content: "";
 }
 
 .conteudo-cta {
-    display: flex; /* usa flexbox para organizar o conteúdo. */
-    flex-direction: column; /* coloca os itens em coluna. */
-    align-items: flex-start; /* alinha à esquerda. */
-    max-width: 760px; /* limita a largura do bloco. */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 760px;
 }
 
 .conteudo-cta > .etiqueta {
-    margin-bottom: 18px; /* espaço abaixo da etiqueta. */
+    margin-bottom: 18px;
 }
 
 .conteudo-cta h2 {
-    margin-top: 0; /* remove margem extra do título. */
+    margin-top: 0;
 }
 
 .conteudo-cta .botao {
-    margin-top: 26px; /* separa o botão do texto. */
+    margin-top: 26px;
 }
 
 /* ---------- BOTÕES ---------- */
 .botao {
-    position: relative; /* permite usar posicionamento extra se necessário. */
-    display: inline-flex; /* faz o botão se comportar como um elemento em linha flexível. */
-    min-height: 52px; /* altura mínima do botão. */
-    align-items: center; /* centraliza conteúdo na vertical. */
-    justify-content: center; /* centraliza conteúdo na horizontal. */
-    gap: 12px; /* espaço entre ícone e texto. */
-    padding: 0 22px; /* espaço interno horizontal do botão. */
-    border: 1px solid transparent; /* borda invisível por padrão. */
-    border-radius: 14px; /* cantos arredondados. */
-    background: var(--lime); /* cor de fundo verde principal. */
-    color: var(--dark-green); /* texto escuro para contraste. */
-    font-size: 0.9rem; /* tamanho do texto. */
-    font-weight: 800; /* texto mais forte. */
+    position: relative;
+    display: inline-flex;
+    min-height: 52px;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 0 22px;
+    border: 1px solid transparent;
+    border-radius: 14px;
+    background: var(--lime);
+    color: var(--dark-green);
+    font-size: 0.9rem;
+    font-weight: 800;
     transition:
-        transform var(--transition), /* sobe levemente ao passar o mouse. */
-        box-shadow var(--transition), /* cria sombra suave. */
-        background var(--transition); /* move a cor do fundo ao hover. */
+        transform var(--transition),
+        box-shadow var(--transition),
+        background var(--transition);
 }
 
 .botao:hover {
-    transform: translateY(-3px); /* levanta o botão ao passar o mouse. */
-    box-shadow: 0 12px 30px rgba(193, 255, 114, 0.2); /* cria uma sombra verde para dar destaque. */
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(193, 255, 114, 0.2);
 }
 
 .botao:active {
-    transform: translateY(0); /* volta ao lugar ao clicar. */
+    transform: translateY(0);
 }
 
 .botao--pequeno {
-    min-height: 44px; /* deixa o botão menor no cabeçalho. */
-    padding-inline: 18px; /* reduz o espaço interno lateral. */
-    font-size: 0.78rem; /* deixa o texto menor. */
+    min-height: 44px;
+    padding-inline: 18px;
+    font-size: 0.78rem;
 }
 
 .botao--primario {
-    background: var(--lime); /* fundo verde principal. */
-    color: var(--dark-green); /* texto escuro para contraste. */
+    background: var(--lime);
+    color: var(--dark-green);
 }
 
 .botao--secundario,
 .botao--ghost {
-    border-color: rgba(244, 242, 220, 0.16); /* borda suave em tom claro. */
-    background: transparent; /* fundo transparente. */
-    color: var(--cream); /* texto em branco cremoso. */
+    border-color: rgba(244, 242, 220, 0.16);
+    background: transparent;
+    color: var(--cream);
 }
 
 .botao--secundario:hover,
 .botao--ghost:hover {
-    border-color: var(--lime); /* borda verde ao hover. */
-    background: rgba(193, 255, 114, 0.06); /* leve fundo verde translúcido. */
-    box-shadow: none; /* remove a sombra para manter estilo mais simples. */
+    border-color: var(--lime);
+    background: rgba(193, 255, 114, 0.06);
+    box-shadow: none;
 }
 
 .link-texto {
-    display: inline-flex; /* coloca o texto e o ícone em linha. */
-    align-items: center; /* alinha verticalmente. */
-    gap: 10px; /* separa o texto do indicador. */
-    margin-top: 30px; /* espaço acima do link. */
-    color: var(--lime); /* deixa em verde para chamar atenção. */
-    font-size: 0.9rem; /* tamanho do texto. */
-    font-weight: 800; /* deixa mais forte. */
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px;
+    color: var(--lime);
+    font-size: 0.9rem;
+    font-weight: 800;
 }
 
 .link-texto span {
-    transition: transform var(--transition); /* faz a seta se mover suavemente. */
+    transition: transform var(--transition);
 }
 
 .link-texto:hover span {
-    transform: translateX(5px); /* move a seta para a direita ao passar o mouse. */
+    transform: translateX(5px);
 }
 
 /* ---------- CABEÇALHO E MENU ---------- */
 .cabecalho {
-    position: fixed; /* fixa o menu no topo da página. */
-    z-index: 1000; /* deixa o menu acima de outros elementos. */
-    top: 0; /* prende no topo. */
-    right: 0; /* prende à direita. */
-    left: 0; /* prende à esquerda. */
-    border-bottom: 1px solid transparent; /* borda invisível por padrão. */
-    background: rgba(7, 18, 8, 0.55); /* fundo fosco escuro. */
-    backdrop-filter: blur(18px); /* deixa o fundo um pouco embaçado. */
-    -webkit-backdrop-filter: blur(18px); /* compatibilidade com navegadores WebKit. */
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+    left: 0;
+    border-bottom: 1px solid transparent;
+    background: rgba(7, 18, 8, 0.55);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
 }
 
 .cabecalho .conteiner {
-    display: flex; /* organiza logo, menu e botão lado a lado. */
-    min-height: 78px; /* altura mínima do cabeçalho. */
-    align-items: center; /* centraliza verticalmente. */
-    justify-content: space-between; /* separa os grupos. */
-    gap: 30px; /* distância entre os elementos. */
+    display: flex;
+    min-height: 78px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
 }
 
 .marca {
-    display: inline-flex; /* alinha logo e texto na mesma linha. */
-    align-items: center; /* centraliza verticalmente. */
-    gap: 10px; /* espaço entre logo e texto caso exista. */
-    flex-shrink: 0; /* impede a marca de encolher. */
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
 }
 
 .marca-logo {
-    display: block; /* deixa a imagem como bloco. */
-    width: 210px; /* largura fixa do logo. */
-    height: auto; /* mantém proporção. */
-    max-height: 60px; /* limita a altura. */
-    object-fit: contain; /* ajusta a imagem sem cortar. */
-    filter: drop-shadow(0 6px 16px rgba(193, 255, 114, 0.1)); /* cria leve brilho na logo. */
+    display: block;
+    width: 210px;
+    height: auto;
+    max-height: 60px;
+    object-fit: contain;
+    filter: drop-shadow(0 6px 16px rgba(193, 255, 114, 0.1));
 }
 
 .marca-icone {
-    display: none; /* esconde variação do logo para desktop. */
+    display: none;
 }
 
 .marca-texto {
-    display: none; /* esconde texto do logo. */
+    display: none;
 }
 
 .menu-lista {
-    display: flex; /* deixa os links alinhados em linha. */
-    align-items: center; /* centraliza verticalmente. */
-    gap: clamp(16px, 2.2vw, 32px); /* espaço responsivo entre os itens do menu. */
+    display: flex;
+    align-items: center;
+    gap: clamp(16px, 2.2vw, 32px);
 }
 
 .link-menu {
-    position: relative; /* permite se basear em pseudo-elementos futuramente. */
-    color: rgba(244, 242, 220, 0.7); /* cor clara em cinza-creme. */
-    font-size: 0.82rem; /* tamanho pequeno do menu. */
-    font-weight: 600; /* deixa os links mais visíveis. */
-    transition: color var(--transition); /* muda a cor com suavidade. */
+    position: relative;
+    color: rgba(244, 242, 220, 0.7);
+    font-size: 0.82rem;
+    font-weight: 600;
+    transition: color var(--transition);
 }
 
 .link-menu:hover {
-    color: var(--white); /* deixa o link mais claro ao passar o mouse. */
+    color: var(--white);
 }
 
 .menu-botao {
-    display: none; /* fica oculto no desktop. */
-    width: 44px; /* largura do botão do menu. */
-    height: 44px; /* altura do botão do menu. */
-    flex-direction: column; /* coloca as barras em coluna. */
-    align-items: center; /* centraliza os itens. */
-    justify-content: center; /* centraliza verticalmente. */
-    gap: 5px; /* espaço entre as barras. */
-    border-radius: 12px; /* arredonda o botão. */
-    background: var(--bg-card); /* fundo do botão. */
-    cursor: pointer; /* mostra cursor de clique. */
+    display: none;
+    width: 44px;
+    height: 44px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    border-radius: 12px;
+    background: var(--bg-card);
+    cursor: pointer;
 }
 
 .menu-botao span {
-    display: block; /* transforma cada span em uma barra. */
-    width: 20px; /* largura da barra. */
-    height: 2px; /* espessura da barra. */
-    background: var(--lime); /* cor verde da barra. */
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: var(--lime);
 }
 
 /* ---------- HERO / APRESENTAÇÃO ---------- */
-/* Classe do bloco principal do banner inicial da página. */
 .apresentacao {
-    position: relative; /* deixa o bloco como referência para elementos absolutos. */
-    min-height: 100svh; /* faz a seção ocupar a altura da tela. */
-    overflow: hidden; /* esconde qualquer conteúdo que ultrapasse os limites. */
-    background: linear-gradient(180deg, #0c5c3b 0%, #0e4f3a 100%); /* cria o fundo verde do topo. */
+    position: relative;
+    min-height: 100svh;
+    overflow: hidden;
+    background: linear-gradient(180deg, #0c5c3b 0%, #0e4f3a 100%);
 }
 
-/* Layout do texto e da imagem do banner em duas colunas. */
 .conjunto-apresentacao {
-    position: relative; /* usa referência para empilhar elementos. */
-    z-index: 2; /* coloca o conteúdo acima da imagem de fundo. */
-    display: grid; /* usa grid para dividir texto e imagem. */
-    min-height: 100svh; /* altura da tela. */
+    position: relative;
+    z-index: 2;
+    display: grid;
+    min-height: 100svh;
     grid-template-columns:
         minmax(0, 0.85fr)
-        minmax(0, 1.15fr); /* define a largura do texto e da imagem. */
-    align-items: center; /* centraliza verticalmente. */
-    gap: 0; /* sem espaço entre colunas. */
-    padding-top: 90px; /* deixa espaço para o header fixo. */
+        minmax(0, 1.15fr);
+    align-items: center;
+    gap: 0;
+    padding-top: 90px;
 }
 
 .conteudo-apresentacao {
-    position: relative; /* base para o texto sobre a imagem. */
-    z-index: 5; /* coloca o texto na frente da camada da imagem. */
-    max-width: 650px; /* limita a largura da área de texto. */
+    position: relative;
+    z-index: 5;
+    max-width: 650px;
 }
 
-/* Título grande do banner principal. */
 .titulo-apresentacao {
-    max-width: 720px; /* limita o tamanho da linha do título. */
-    margin-top: 22px; /* espaço acima do título. */
-    color: var(--white); /* texto branco. */
-    font-size: clamp(3rem, 5.5vw, 6rem); /* tamanho responsivo do título. */
-    font-weight: 900; /* deixa o título bem forte. */
-    line-height: 0.94; /* aproxima as linhas do título. */
-    letter-spacing: -0.065em; /* deixa as letras bem próximas. */
+    max-width: 720px;
+    margin-top: 22px;
+    color: var(--white);
+    font-size: clamp(3rem, 5.5vw, 6rem);
+    font-weight: 900;
+    line-height: 0.94;
+    letter-spacing: -0.065em;
 }
 
 .titulo-apresentacao span {
-    display: block; /* força a segunda linha em bloco separado. */
-    color: var(--lime); /* destaca a parte em verde. */
+    display: block;
+    color: var(--lime);
 }
 
 .texto-apresentacao {
-    max-width: 570px; /* limita a largura do texto. */
-    margin-top: 28px; /* espaço acima do parágrafo. */
-    color: rgba(244, 242, 220, 0.72); /* texto claro com transparência. */
-    font-size: clamp(1rem, 1.4vw, 1.15rem); /* tamanho responsivo. */
+    max-width: 570px;
+    margin-top: 28px;
+    color: rgba(244, 242, 220, 0.72);
+    font-size: clamp(1rem, 1.4vw, 1.15rem);
 }
 
 .acoes-apresentacao {
-    display: flex; /* coloca os botões em linha. */
-    flex-wrap: wrap; /* permite quebrar linha se não couber. */
-    gap: 12px; /* separa os botões. */
-    margin-top: 34px; /* espaço acima dos botões. */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 34px;
 }
 
 .estatisticas-apresentacao {
-    display: flex; /* organiza os blocos em linha. */
-    margin-top: 48px; /* espaço acima das estatísticas. */
+    display: flex;
+    margin-top: 48px;
 }
 
 .estatisticas-apresentacao li {
-    min-width: 110px; /* largura mínima para cada item. */
-    padding-right: 24px; /* espaço à direita ao redor do texto. */
-    border-right: 1px solid var(--line); /* linha divisória entre itens. */
+    min-width: 110px;
+    padding-right: 24px;
+    border-right: 1px solid var(--line);
 }
 
 .estatisticas-apresentacao li + li {
-    padding-left: 24px; /* cria espaço interno da esquerda nos itens seguintes. */
+    padding-left: 24px;
 }
 
 .estatisticas-apresentacao li:last-child {
-    border-right: 0; /* remove a linha do último item. */
+    border-right: 0;
 }
 
 .estatisticas-apresentacao strong {
-    display: block; /* faz o número ficar em linha própria. */
-    color: var(--lime); /* deixa o número em verde. */
-    font-family: var(--font-pixel); /* usa fonte pixel para o destaque. */
-    font-size: 1rem; /* tamanho do número. */
+    display: block;
+    color: var(--lime);
+    font-family: var(--font-pixel);
+    font-size: 1rem;
 }
 
 .estatisticas-apresentacao span {
-    display: block; /* deixa o texto em bloco separado. */
-    margin-top: 6px; /* espaço acima do texto pequeno. */
-    color: var(--muted); /* cor cinza-clara. */
-    font-size: 0.75rem; /* tamanho pequeno. */
-    font-weight: 600; /* deixa o texto mais forte. */
+    display: block;
+    margin-top: 6px;
+    color: var(--muted);
+    font-size: 0.75rem;
+    font-weight: 600;
 }
 
 /* ---------- IMAGEM DO BANNER E PERSONAGENS ---------- */
-/* Container da imagem de fundo e dos personagens do banner. */
 .cena-apresentacao {
-    position: relative; /* referência para posicionar tudo dentro. */
-    width: 100%; /* ocupa toda a largura. */
-    height: 100%; /* ocupa toda a altura. */
-    min-height: 100svh; /* garante altura da tela. */
-    margin: 0; /* remove margem padrão. */
-    padding: 0; /* remove padding padrão. */
-    isolation: isolate; /* cria uma camada isolada para empilhar itens. */
-    overflow: hidden; /* evita que os elementos saiam do bloco. */
-    border: 0; /* remove borda padrão. */
-    background: transparent; /* fundo transparente. */
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 100svh;
+    margin: 0;
+    padding: 0;
+    isolation: isolate;
+    overflow: hidden;
+    border: 0;
+    background: transparent;
 }
 
 .cena-apresentacao::before,
 .cena-apresentacao::after {
-    content: ""; /* cria o pseudo-elemento visual. */
-    position: absolute; /* posiciona sobre o bloco. */
-    inset: 0; /* ocupa todo o espaço do pai. */
-    pointer-events: none; /* não atrapalha o clique. */
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
 }
 
 .cena-apresentacao::before {
-    z-index: 1; /* fica acima da imagem mas abaixo dos personagens. */
-    background: rgba(7, 18, 8, 0.62); /* escurece a imagem para dar contraste. */
+    z-index: 1;
+    background: rgba(7, 18, 8, 0.62);
 }
 
 .cena-apresentacao::after {
-    display: none; /* esse pseudo-elemento está desativado. */
+    display: none;
 }
 
 .img-banner {
-    position: absolute; /* fixa a imagem por cima do fundo. */
-    top: -5%; /* desloca um pouco para cima. */
-    right: -5%; /* desloca um pouco para direita. */
-    bottom: -5%; /* desloca um pouco para baixo. */
-    left: -5%; /* desloca um pouco para esquerda. */
-    z-index: 0; /* fica atrás dos elementos. */
-    width: 110%; /* aumenta um pouco a largura. */
-    height: 110%; /* aumenta a altura para cobrir mais espaço. */
-    max-width: none; /* remove a largura máxima padrão. */
-    object-fit: cover; /* preenche o espaço sem distorcer. */
-    object-position: center; /* centraliza a imagem. */
-    display: block; /* faz a imagem se comportar como bloco. */
-    opacity: 1; /* deixa a imagem totalmente visível. */
+    position: absolute;
+    top: -5%;
+    right: -5%;
+    bottom: -5%;
+    left: -5%;
+    z-index: 0;
+    width: 110%;
+    height: 110%;
+    max-width: none;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    opacity: 1;
 }
 
-/* Classe de cada personagem que aparece sobre a imagem do banner. */
 .personagem-apresentacao {
-    position: absolute; /* posiciona cada personagem sobre a cena. */
-    z-index: 2; /* deixa os personagens acima do filtro escuro. */
-    width: 90px; /* largura base dos personagens. */
-    max-width: none; /* sem limite de largura. */
-    filter: drop-shadow(4px 8px 0 rgba(7, 18, 8, 0.25)); /* cria sombra sob os personagens. */
-    transition: transform 300ms ease; /* suaviza o movimento ao hover. */
+    position: absolute;
+    z-index: 2;
+    width: 90px;
+    max-width: none;
+    filter: drop-shadow(4px 8px 0 rgba(7, 18, 8, 0.25));
+    transition: transform 300ms ease;
 }
 
 .personagem-apresentacao--donatelo {
-    right: 12%; /* distância da direita. */
-    bottom: 24%; /* distância do fundo. */
+    right: 12%;
+    bottom: 24%;
 }
 
 .personagem-apresentacao--frida {
-    right: 66%; /* distância da direita. */
-    bottom: 23%; /* distância do fundo. */
+    right: 66%;
+    bottom: 23%;
 }
 
 .personagem-apresentacao--koda {
-    right: 25%; /* distância da direita. */
-    bottom: 7%; /* distância do fundo. */
-    width: 105px; /* deixa o personagem um pouco maior. */
+    right: 25%;
+    bottom: 7%;
+    width: 105px;
 }
 
 .personagem-apresentacao--agatha {
-    right: 78%; /* distância da direita. */
-    bottom: 11%; /* distância do fundo. */
+    right: 78%;
+    bottom: 11%;
 }
 
 .cena-apresentacao:hover .personagem-apresentacao {
-    transform: translateY(-8px); /* levanta os personagens ao passar o mouse. */
+    transform: translateY(-8px);
 }
 
 .cena-apresentacao:hover .personagem-apresentacao--donatelo {
-    transform: translateY(-6px) rotate(-2deg); /* levanta e inclina um pouco. */
+    transform: translateY(-6px) rotate(-2deg);
 }
 
 .cena-apresentacao:hover .personagem-apresentacao--frida {
-    transform: translateY(-9px) rotate(2deg); /* levanta e inclina para o outro lado. */
+    transform: translateY(-9px) rotate(2deg);
 }
 
 .cena-apresentacao:hover .personagem-apresentacao--koda {
-    transform: translateY(-7px); /* move para cima. */
+    transform: translateY(-7px);
 }
 
 .cena-apresentacao:hover .personagem-apresentacao--agatha {
-    transform: translateY(-5px); /* move levemente para cima. */
+    transform: translateY(-5px);
 }
 
 /* ---------- HISTÓRIA / SOBRE ---------- */
 #sobre {
     background:
-        radial-gradient(circle at 10% 20%, rgba(193, 255, 114, 0.04), transparent 25%),
-        var(--bg); /* cria um brilho sutil e mantém o fundo escuro. */
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(193, 255, 114, 0.04),
+            transparent 25%
+        ),
+        var(--bg);
 }
 
-/* Bloco de cada item da seção de história. */
 .linha-historia {
-    display: grid; /* usa grid para dividir texto e imagem. */
-    grid-template-columns: 0.8fr 1.2fr; /* define a proporção do layout. */
-    align-items: center; /* centraliza os itens verticalmente. */
-    gap: clamp(20px, 4vw, 64px); /* espaçamento responsivo entre os lados. */
-    padding: 50px 0 100px; /* espaço interno vertical. */
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    align-items: center;
+    gap: clamp(20px, 4vw, 64px);
+    padding: 50px 0 100px;
 }
 
 .linha-historia.invertida {
-    grid-template-columns: 1.2fr 0.8fr; /* inverte a ordem visual para a segunda linha. */
+    grid-template-columns: 1.2fr 0.8fr;
 }
 
 .linha-historia.invertida .texto-historia {
-    order: 2; /* move o texto para a direita. */
+    order: 2;
 }
 
 .linha-historia.invertida .imagem-historia {
-    order: 1; /* move a imagem para a esquerda. */
+    order: 1;
 }
 
 .linha-historia .imagem-historia {
-    width: min(100%, 460px); /* define a largura máxima da imagem. */
-    justify-self: center; /* centraliza no grid. */
-    max-height: 580px; /* limita a altura. */
-    padding: 12px; /* espaço interno da moldura. */
-    border: 2px solid rgba(193, 255, 114, 0.2); /* borda suave verde. */
-    border-radius: 28px; /* cantos arredondados. */
-    background: #091a0d; /* fundo escuro da caixa da imagem. */
-    box-shadow:
-        0 30px 60px rgba(0, 0, 0, 0.28),
-    aspect-ratio: 1 / 1; /* força a imagem a ficar quadrada. */
+    width: min(100%, 460px);
+    justify-self: center;
+    max-height: 580px;
+    padding: 12px;
+    border: 2px solid rgba(193, 255, 114, 0.2);
+    border-radius: 28px;
+    background: #091a0d;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.28);
+    aspect-ratio: 1 / 1;
 }
 
 .texto-historia {
-    max-width: 500px; /* limita a largura do texto. */
+    max-width: 500px;
 }
 
 .numero-historia {
-    display: block; /* faz o número ficar em linha própria. */
-    color: var(--lime); /* verde para destacar o número. */
-    font-family: var(--font-pixel); /* usa a fonte pixel. */
-    font-size: 0.8rem; /* tamanho pequeno. */
+    display: block;
+    color: var(--lime);
+    font-family: var(--font-pixel);
+    font-size: 0.8rem;
 }
 
 .texto-historia h3 {
-    margin-top: 20px; /* espaço acima do título. */
-    color: var(--white); /* texto branco. */
-    font-size: clamp(1.8rem, 3vw, 2.8rem); /* tamanho responsivo. */
-    line-height: 1.05; /* aproxima as linhas do título. */
-    letter-spacing: -0.04em; /* deixa a fonte mais compacta. */
+    margin-top: 20px;
+    color: var(--white);
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    line-height: 1.05;
+    letter-spacing: -0.04em;
 }
 
 .texto-historia p {
-    margin-top: 20px; /* espaço acima do parágrafo. */
-    color: var(--muted); /* tom médio do texto. */
+    margin-top: 20px;
+    color: var(--muted);
 }
 
 .imagem-historia {
-    position: relative; /* base para o overlay. */
-    overflow: hidden; /* esconde qualquer excesso da imagem. */
-    border: 1px solid var(--line); /* borda fina. */
-    border-radius: var(--radius-xl); /* borda grande curvada. */
-    background: var(--bg-card); /* fundo do bloco da imagem. */
-    box-shadow: var(--shadow); /* cria sombra para dar profundidade. */
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-xl);
+    background: var(--bg-card);
+    box-shadow: var(--shadow);
 }
 
 .imagem-historia::after {
-    position: absolute; /* posiciona por cima da imagem. */
-    inset: 0; /* ocupa todo o espaço. */
+    position: absolute;
+    inset: 0;
     background: linear-gradient(
         135deg,
         rgba(193, 255, 114, 0.08),
         transparent 50%
-    ); /* cria uma camada verde leve por cima. */
-    pointer-events: none; /* não interfere no clique. */
-    content: ""; /* cria o pseudo-elemento. */
+    );
+    pointer-events: none;
+    content: "";
 }
 
 .imagem-historia img {
-    width: 100%; /* ocupa toda a largura. */
-    height: 100%; /* ocupa toda a altura. */
-    border-radius: 18px; /* cantos arredondados. */
-    aspect-ratio: 9 / 16; /* mantém proporção vertical. */
-    object-fit: cover; /* ajusta a imagem sem distorcer. */
-    image-rendering: pixelated; /* deixa a imagem mais pixelada. */
+    width: 100%;
+    height: 100%;
+    border-radius: 18px;
+    aspect-ratio: 9 / 16;
+    object-fit: cover;
+    image-rendering: pixelated;
 }
 
 .imagem-historia figcaption {
-    padding: 18px 22px; /* espaço interno do texto da imagem. */
-    color: var(--muted); /* texto em cinza-claro. */
-    font-family: var(--font-pixel); /* fonte pixel. */
-    font-size: 0.55rem; /* texto pequeno. */
+    padding: 18px 22px;
+    color: var(--muted);
+    font-family: var(--font-pixel);
+    font-size: 0.55rem;
 }
 
 /* ---------- COMO FUNCIONA ---------- */
 #como-funciona {
     background:
-        linear-gradient(rgba(21, 10, 93, 0.9), rgba(21, 10, 93, 0.95)),
-        var(--purple); /* fundo roxo com sobreposição escura. */
+        linear-gradient(
+            rgba(21, 10, 93, 0.9),
+            rgba(21, 10, 93, 0.95)
+        ),
+        var(--purple);
 }
 
 .etapas {
-    display: grid; /* usa grid para mostrar etapas lado a lado. */
-    grid-template-columns: repeat(3, 1fr); /* três colunas iguais. */
-    gap: 18px; /* espaço entre os cards. */
-    counter-reset: etapas; /* prepara contadores para as etapas. */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    counter-reset: etapas;
 }
 
-/* Cada card da seção de como funciona. */
 .card-etapa {
-    position: relative; /* base para elementos extras. */
-    min-height: 350px; /* altura mínima dos cards. */
-    padding: 38px; /* espaço interno. */
-    overflow: hidden; /* esconde elementos que saem do card. */
-    border: 1px solid rgba(193, 255, 114, 0.12); /* borda sutil verde. */
-    border-radius: var(--radius-lg); /* cantos arredondados. */
-    background: rgba(7, 18, 8, 0.42); /* fundo semi-transparente. */
+    position: relative;
+    min-height: 350px;
+    padding: 38px;
+    overflow: hidden;
+    border: 1px solid rgba(193, 255, 114, 0.12);
+    border-radius: var(--radius-lg);
+    background: rgba(7, 18, 8, 0.42);
     transition:
         transform var(--transition),
         border-color var(--transition),
-        background var(--transition); /* animação suave ao hover. */
+        background var(--transition);
 }
 
 .card-etapa:hover {
-    transform: translateY(-8px); /* levanta o card ao passar o mouse. */
-    border-color: rgba(193, 255, 114, 0.4); /* borda mais visível. */
-    background: rgba(7, 18, 8, 0.65); /* escurece um pouco o fundo. */
+    transform: translateY(-8px);
+    border-color: rgba(193, 255, 114, 0.4);
+    background: rgba(7, 18, 8, 0.65);
 }
 
 .numero-etapa {
-    color: rgba(193, 255, 114, 0.45); /* número em verde bem suave. */
-    font-family: var(--font-pixel); /* fonte pixel. */
-    font-size: 0.65rem; /* texto pequeno. */
+    color: rgba(193, 255, 114, 0.45);
+    font-family: var(--font-pixel);
+    font-size: 0.65rem;
 }
 
 .icone-etapa {
-    display: grid; /* cria centralização do conteúdo. */
-    width: 68px; /* largura do ícone. */
-    height: 68px; /* altura do ícone. */
-    margin-top: 70px; /* espaço do topo. */
-    place-items: center; /* centraliza vertical e horizontalmente. */
-    border: 2px solid var(--lime); /* borda vermelha? no caso verde. */
-    border-radius: 16px; /* bordas arredondadas. */
-    background: rgba(193, 255, 114, 0.08); /* fundo verde transparente. */
-    color: var(--lime); /* cor do texto do ícone. */
-    font-family: var(--font-pixel); /* fonte pixel. */
-    font-size: 0.8rem; /* tamanho do texto. */
+    display: grid;
+    width: 68px;
+    height: 68px;
+    margin-top: 70px;
+    place-items: center;
+    border: 2px solid var(--lime);
+    border-radius: 16px;
+    background: rgba(193, 255, 114, 0.08);
+    color: var(--lime);
+    font-family: var(--font-pixel);
+    font-size: 0.8rem;
 }
 
 .card-etapa h3 {
-    margin-top: 28px; /* espaço acima do título. */
-    color: var(--white); /* texto branco. */
-    font-size: 1.5rem; /* tamanho do título. */
+    margin-top: 28px;
+    color: var(--white);
+    font-size: 1.5rem;
 }
 
 .card-etapa p {
-    margin-top: 10px; /* espaço acima do texto auxiliar. */
-    color: var(--muted); /* texto em cinza. */
+    margin-top: 10px;
+    color: var(--muted);
 }
 
 .premio {
-    display: grid; /* usa grid para dividir o prêmio em textos e lista. */
-    grid-template-columns: 1fr auto; /* texto ocupa a maior parte; lista ocupa o lado. */
-    gap: 50px; /* espaço entre os lados. */
-    margin-top: 18px; /* espaço acima do bloco. */
-    padding: 45px; /* espaço interno. */
-    border: 1px solid rgba(193, 255, 114, 0.2); /* borda verde suave. */
-    border-radius: var(--radius-lg); /* bordas arredondadas. */
-    background: var(--lime); /* fundo verde claro. */
-    color: var(--dark-green); /* texto escuro para contraste. */
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 50px;
+    margin-top: 18px;
+    padding: 45px;
+    border: 1px solid rgba(193, 255, 114, 0.2);
+    border-radius: var(--radius-lg);
+    background: var(--lime);
+    color: var(--dark-green);
 }
 
 .premio h3 {
-    max-width: 620px; /* limita a largura do texto. */
-    margin-top: 12px; /* espaço do topo. */
-    font-size: clamp(1.7rem, 3vw, 2.8rem); /* tamanho responsivo. */
-    line-height: 1.05; /* aproxima as linhas. */
-    letter-spacing: -0.04em; /* compacta as letras. */
+    max-width: 620px;
+    margin-top: 12px;
+    font-size: clamp(1.7rem, 3vw, 2.8rem);
+    line-height: 1.05;
+    letter-spacing: -0.04em;
 }
 
 .premio p {
-    max-width: 580px; /* limita a largura do texto. */
-    margin-top: 15px; /* espaço acima do texto. */
-    color: rgba(15, 47, 11, 0.7); /* texto verde escuro translúcido. */
+    max-width: 580px;
+    margin-top: 15px;
+    color: rgba(15, 47, 11, 0.7);
 }
 
 .premio ul {
-    display: grid; /* usa grid para a lista. */
-    grid-template-columns: repeat(2, 1fr); /* duas colunas. */
-    align-content: center; /* centraliza verticalmente os itens. */
-    gap: 12px 30px; /* espaço entre os itens. */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-content: center;
+    gap: 12px 30px;
 }
 
 .premio li {
-    display: flex; /* coloca ícone e texto na mesma linha. */
-    align-items: center; /* centraliza verticalmente. */
-    gap: 8px; /* separa o ícone do texto. */
-    font-size: 0.8rem; /* tamanho da fonte. */
-    font-weight: 800; /* deixa forte. */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+    font-weight: 800;
 }
 
 /* ---------- PERSONAGENS ---------- */
 #personagens {
-    background: var(--bg); /* fundo escuro da seção. */
+    background: var(--bg);
 }
 
-/* Grid com todos os cards de personagens. */
 .lista-personagens {
-    display: grid; /* usa grid para os cards. */
-    grid-template-columns: repeat(2, 1fr); /* duas colunas iguais. */
-    gap: 20px; /* espaço entre os cards. */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
 }
 
-/* Card individual de cada personagem. */
 .card-personagem {
-    position: relative; /* base para elementos posicionados. */
-    display: grid; /* organiza imagem e texto em colunas. */
-    min-height: 450px; /* altura mínima do card. */
-    grid-template-columns: 0.8fr 1.2fr; /* proporção da imagem e texto. */
-    overflow: hidden; /* esconde conteúdo extra. */
-    border: 1px solid var(--line); /* borda fina. */
-    border-radius: var(--radius-lg); /* bordas arredondadas. */
-    background: var(--bg-card); /* fundo do bloco. */
+    position: relative;
+    display: grid;
+    min-height: 450px;
+    grid-template-columns: 0.8fr 1.2fr;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    background: var(--bg-card);
     transition:
         transform 300ms ease,
-        border-color 300ms ease; /* animação ao hover. */
+        border-color 300ms ease;
 }
 
 .card-personagem:hover {
-    transform: translateY(-8px); /* levanta o card. */
-    border-color: rgba(193, 255, 114, 0.4); /* borda mais forte. */
+    transform: translateY(-8px);
+    border-color: rgba(193, 255, 114, 0.4);
 }
 
 .card-personagem figure {
-    position: relative; /* base para o glow e a imagem. */
-    min-height: 100%; /* ocupa a altura inteira. */
-    overflow: hidden; /* esconde o brilho extra. */
-    background: var(--green); /* fundo verde da área da imagem. */
+    position: relative;
+    min-height: 100%;
+    overflow: hidden;
+    background: var(--green);
 }
 
 .card-personagem figure::before {
-    position: absolute; /* posiciona o brilho circular. */
-    inset: 15%; /* espaço em todos os lados. */
-    border-radius: 50%; /* deixa redondo. */
-    background: rgba(193, 255, 114, 0.15); /* brilho verde suave. */
-    filter: blur(25px); /* espalha o brilho. */
-    content: ""; /* cria o pseudo-elemento. */
+    position: absolute;
+    inset: 15%;
+    border-radius: 50%;
+    background: rgba(193, 255, 114, 0.15);
+    filter: blur(25px);
+    content: "";
 }
 
 .card-personagem img {
-    position: absolute; /* posiciona a imagem no fundo do card. */
-    z-index: 1; /* coloca acima do fundo. */
-    bottom: 0; /* fixa no fundo. */
-    left: 50%; /* centraliza horizontalmente. */
-    width: 80%; /* largura da imagem. */
-    max-width: 220px; /* limite de largura. */
-    transform: translateX(-50%); /* ajusta para ficar centralizada. */
-    image-rendering: pixelated; /* dá um visual pixelado. */
-    transition: transform 300ms ease; /* move suavemente no hover. */
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: 50%;
+    width: 80%;
+    max-width: 220px;
+    transform: translateX(-50%);
+    image-rendering: pixelated;
+    transition: transform 300ms ease;
 }
 
 .card-personagem:hover img {
-    transform: translateX(-50%) translateY(-8px); /* levanta a imagem ao passar o mouse. */
+    transform: translateX(-50%) translateY(-8px);
 }
 
 .corpo-personagem {
-    display: flex; /* organiza o texto em coluna. */
-    flex-direction: column; /* empilha os itens. */
-    justify-content: center; /* centraliza verticalmente. */
-    padding: 40px; /* espaço interno. */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
 }
 
 .cargo-personagem {
-    color: var(--lime); /* texto verde. */
-    font-family: var(--font-pixel); /* fonte pixel. */
-    font-size: 0.55rem; /* texto pequeno. */
-    text-transform: uppercase; /* deixa em maiúsculas. */
+    color: var(--lime);
+    font-family: var(--font-pixel);
+    font-size: 0.55rem;
+    text-transform: uppercase;
 }
 
 .card-personagem h3 {
-    margin-top: 12px; /* espaço acima do nome. */
-    color: var(--white); /* texto branco. */
-    font-size: clamp(2rem, 3vw, 3rem); /* tamanho escalável. */
-    letter-spacing: -0.05em; /* aproxima letras. */
+    margin-top: 12px;
+    color: var(--white);
+    font-size: clamp(2rem, 3vw, 3rem);
+    letter-spacing: -0.05em;
 }
 
 .card-personagem p {
-    margin-top: 15px; /* espaço acima da descrição. */
-    color: var(--muted); /* texto cinza. */
-    font-size: 0.9rem; /* tamanho da fonte. */
+    margin-top: 15px;
+    color: var(--muted);
+    font-size: 0.9rem;
 }
 
 .card-personagem dl {
-    display: grid; /* usa grid para os dados. */
-    gap: 12px; /* espaço entre cada linha. */
-    margin-top: 25px; /* espaço acima da lista. */
-    padding-top: 20px; /* espaço interno superior. */
-    border-top: 1px solid var(--line); /* linha separando. */
+    display: grid;
+    gap: 12px;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
 }
 
 .card-personagem dl div {
-    display: flex; /* organiza título e valor na mesma linha. */
-    justify-content: space-between; /* separa na lateral. */
-    gap: 15px; /* espaço entre os dois. */
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
 }
 
 .card-personagem dt {
-    color: rgba(244, 242, 220, 0.45); /* texto secundário. */
-    font-size: 0.72rem; /* tamanho pequeno. */
+    color: rgba(244, 242, 220, 0.45);
+    font-size: 0.72rem;
 }
 
 .card-personagem dd {
-    color: var(--cream); /* valor em texto claro. */
-    font-size: 0.72rem; /* tamanho pequeno. */
-    font-weight: 700; /* deixa mais forte. */
-    text-align: right; /* alinha o valor à direita. */
+    color: var(--cream);
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-align: right;
 }
 
 .card-personagem--frida figure {
-    background: #4c6935; /* fundo verde oliva. */
+    background: #4c6935;
 }
 
 .card-personagem--koda figure {
-    background: #21136c; /* fundo roxo escuro. */
+    background: #21136c;
 }
 
 .card-personagem--agatha figure {
-    background: #19586a; /* fundo azul-esverdeado. */
+    background: #19586a;
 }
 
 /* ---------- DESAFIO / DEMO ---------- */
 #demonstracao {
     background:
-        radial-gradient(circle at 50% 0, rgba(193, 255, 114, 0.08), transparent 30%),
-        var(--bg-soft); /* cria um brilho no topo e mantém o fundo escuro. */
+        radial-gradient(
+            circle at 50% 0,
+            rgba(193, 255, 114, 0.08),
+            transparent 30%
+        ),
+        var(--bg-soft);
 }
 
-/* Caixa visual da seção de desafio. */
 .janela-demo {
-    max-width: 900px; /* limita a largura da janela. */
-    margin-inline: auto; /* centraliza no meio. */
-    overflow: hidden; /* esconde bordas extras. */
-    border: 2px solid rgba(193, 255, 114, 0.2); /* borda suave verde. */
-    border-radius: 18px; /* cantos arredondados. */
-    background: #08150a; /* fundo escuro da caixa. */
+    max-width: 900px;
+    margin-inline: auto;
+    overflow: hidden;
+    border: 2px solid rgba(193, 255, 114, 0.2);
+    border-radius: 18px;
+    background: #08150a;
     box-shadow:
         0 40px 100px rgba(0, 0, 0, 0.4),
-        0 0 0 8px rgba(193, 255, 114, 0.025); /* cria profundidade e brilho leve. */
+        0 0 0 8px rgba(193, 255, 114, 0.025);
 }
 
 .cabecalho-demo,
 .rodape-demo {
-    display: flex; /* alinha os itens na mesma linha. */
-    min-height: 58px; /* altura mínima do topo e fundo. */
-    align-items: center; /* centraliza verticalmente. */
-    justify-content: space-between; /* separa os lados. */
-    gap: 20px; /* espaço entre os grupos. */
-    padding: 0 25px; /* espaço interno lateral. */
-    border-bottom: 1px solid rgba(193, 255, 114, 0.1); /* linha fina separando. */
-    background: #0d2110; /* fundo mais escuro. */
-    color: rgba(244, 242, 220, 0.6); /* texto em tom claro. */
-    font-family: var(--font-pixel); /* fonte pixel. */
-    font-size: 0.55rem; /* texto pequeno. */
+    display: flex;
+    min-height: 58px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 0 25px;
+    border-bottom: 1px solid rgba(193, 255, 114, 0.1);
+    background: #0d2110;
+    color: rgba(244, 242, 220, 0.6);
+    font-family: var(--font-pixel);
+    font-size: 0.55rem;
 }
 
 .pontos-janela {
-    display: flex; /* coloca os pontos em linha. */
-    gap: 6px; /* espaço entre eles. */
+    display: flex;
+    gap: 6px;
 }
 
 .pontos-janela span {
-    width: 8px; /* tamanho dos pontos. */
-    height: 8px; /* altura dos pontos. */
-    border-radius: 50%; /* deixa redondo. */
-    background: var(--lime); /* cor verde dos pontos. */
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--lime);
 }
 
 .pontos-janela span:nth-child(2) {
-    opacity: 0.6; /* deixa o segundo ponto mais transparente. */
+    opacity: 0.6;
 }
 
 .pontos-janela span:nth-child(3) {
-    opacity: 0.3; /* deixa o terceiro ponto ainda mais suave. */
+    opacity: 0.3;
 }
 
 .corpo-demo {
-    display: grid; /* organiza o conteúdo em bloco único. */
-    grid-template-columns: 1fr; /* uma única coluna. */
-    min-height: 500px; /* altura mínima da área. */
+    display: grid;
+    grid-template-columns: 1fr;
+    min-height: 500px;
 }
 
 .desafio {
-    width: min(100%, 760px); /* limita a largura da área do desafio. */
-    margin-inline: auto; /* centraliza o conteúdo. */
-    padding: clamp(30px, 5vw, 60px); /* espaço interno responsivo. */
+    width: min(100%, 760px);
+    margin-inline: auto;
+    padding: clamp(30px, 5vw, 60px);
 }
 
 .etiqueta-desafio {
-    color: var(--lime); /* texto verde. */
-    font-family: var(--font-pixel); /* fonte pixel. */
-    font-size: 0.55rem; /* tamanho pequeno. */
+    color: var(--lime);
+    font-family: var(--font-pixel);
+    font-size: 0.55rem;
 }
 
 .desafio h3 {
-    margin-top: 12px; /* espaço acima do título. */
-    color: var(--white); /* texto branco. */
-    font-size: clamp(1.5rem, 3vw, 2.2rem); /* tamanho responsivo. */
+    margin-top: 12px;
+    color: var(--white);
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
 }
 
 .desafio pre {
-    margin-top: 30px; /* espaço acima do bloco de código. */
-    padding: 25px; /* espaço interno do bloco. */
-    overflow-x: auto; /* permite rolagem horizontal se necessário. */
-    border: 1px solid rgba(193, 255, 114, 0.12); /* borda sutil. */
-    border-radius: 12px; /* cantos arredondados. */
-    background: #050b06; /* fundo bem escuro. */
-    color: #d6e7d0; /* cor do texto da área de código. */
-    font-family: monospace; /* fonte monoespaçada. */
-    font-size: 0.9rem; /* tamanho do texto. */
-    line-height: 1.8; /* altura da linha para leitura fácil. */
+    margin-top: 30px;
+    padding: 25px;
+    overflow-x: auto;
+    border: 1px solid rgba(193, 255, 114, 0.12);
+    border-radius: 12px;
+    background: #050b06;
+    color: #d6e7d0;
+    font-family: monospace;
+    font-size: 0.9rem;
+    line-height: 1.8;
 }
 
 .desafio pre span {
-    color: var(--lime); /* destaca elementos em verde. */
+    color: var(--lime);
 }
 
-/* Bloco com as opções de resposta do desafio. */
 .formulario-desafio fieldset {
-    display: grid; /* usa grid para as opções. */
-    grid-template-columns: repeat(2, 1fr); /* duas colunas iguais. */
-    gap: 10px; /* espaço entre as opções. */
-    margin-top: 25px; /* espaço acima do conjunto. */
-    border: 0; /* remove borda padrão do fieldset. */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 25px;
+    border: 0;
 }
 
 .formulario-desafio legend {
-    margin-bottom: 12px; /* espaço abaixo da legenda. */
-    color: var(--muted); /* texto em cinza claro. */
-    font-size: 0.8rem; /* tamanho da fonte. */
+    margin-bottom: 12px;
+    color: var(--muted);
+    font-size: 0.8rem;
 }
 
 .formulario-desafio label {
-    position: relative; /* referencia para o input escondido. */
-    cursor: pointer; /* mostra cursor clicável. */
+    position: relative;
+    cursor: pointer;
 }
 
 .formulario-desafio input {
-    position: absolute; /* remove visibilidade do input original. */
-    opacity: 0; /* deixa invisível, mas funcional. */
+    position: absolute;
+    opacity: 0;
 }
 
 .formulario-desafio label span {
-    display: block; /* faz o label se comportar como bloco. */
-    padding: 14px 16px; /* espaço interno do item. */
-    border: 1px solid rgba(193, 255, 114, 0.12); /* borda fina. */
-    border-radius: 10px; /* borda arredondada. */
-    background: rgba(193, 255, 114, 0.03); /* fundo bem leve. */
-    color: var(--cream); /* texto claro. */
-    font-size: 0.8rem; /* tamanho da fonte. */
-    font-weight: 700; /* deixa mais forte. */
-    transition: all var(--transition); /* anima todas as mudanças. */
+    display: block;
+    padding: 14px 16px;
+    border: 1px solid rgba(193, 255, 114, 0.12);
+    border-radius: 10px;
+    background: rgba(193, 255, 114, 0.03);
+    color: var(--cream);
+    font-size: 0.8rem;
+    font-weight: 700;
+    transition: all var(--transition);
 }
 
 .formulario-desafio input:checked + span {
-    border-color: var(--lime); /* borda verde quando selecionado. */
-    background: rgba(193, 255, 114, 0.1); /* fundo verde suave. */
-    color: var(--lime); /* texto em verde. */
+    border-color: var(--lime);
+    background: rgba(193, 255, 114, 0.1);
+    color: var(--lime);
 }
 
 .formulario-desafio label:hover span {
-    border-color: rgba(193, 255, 114, 0.35); /* deixa a borda mais visível no hover. */
+    border-color: rgba(193, 255, 114, 0.35);
 }
 
 .formulario-desafio .botao {
-    width: 100%; /* botão ocupa toda a largura. */
-    margin-top: 18px; /* espaço acima do botão. */
+    width: 100%;
+    margin-top: 18px;
 }
 
 .resultado-desafio {
-    display: block; /* faz o resultado aparecer como bloco. */
-    min-height: 20px; /* ocupa um espaço mínimo mesmo sem texto. */
-    margin-top: 18px; /* espaço acima do texto de resposta. */
-    color: var(--lime); /* texto verde. */
-    font-family: var(--font-pixel); /* fonte pixel. */
-    font-size: 0.6rem; /* texto pequeno. */
+    display: block;
+    min-height: 20px;
+    margin-top: 18px;
+    color: var(--lime);
+    font-family: var(--font-pixel);
+    font-size: 0.6rem;
 }
 
 .rodape-demo {
-    border-top: 1px solid rgba(193, 255, 114, 0.1); /* linha separando o rodapé da demo. */
-    border-bottom: 0; /* remove a borda inferior. */
+    border-top: 1px solid rgba(193, 255, 114, 0.1);
+    border-bottom: 0;
 }
 
 /* ---------- RODAPÉ ---------- */
 .rodape {
-    padding: 36px 0 26px; /* espaço interno acima e abaixo. */
-    background: #071208; /* fundo escuro do rodapé. */
+    padding: 36px 0 26px;
+    background: #071208;
 }
 
 .rodape .conteiner {
-    display: grid; /* organiza o conteúdo em grade. */
-    gap: 28px; /* espaço entre os blocos. */
+    display: grid;
+    gap: 28px;
 }
 
 .rodape-principal,
 .rodape-inferior {
-    display: flex; /* coloca os itens em linha. */
-    align-items: center; /* centraliza verticalmente. */
-    justify-content: space-between; /* separa os lados. */
-    gap: 18px; /* espaço entre os itens. */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
 }
 
 .rodape-principal p {
-    max-width: 420px; /* limita a largura do texto. */
-    color: rgba(244, 242, 220, 0.7); /* texto claro. */
+    max-width: 420px;
+    color: rgba(244, 242, 220, 0.7);
 }
 
 .rodape nav ul {
-    display: flex; /* coloca links em linha. */
-    flex-wrap: wrap; /* quebra linha se necessário. */
-    gap: 18px 28px; /* espaço entre os links. */
-    color: rgba(244, 242, 220, 0.72); /* cor dos links. */
-    font-size: 0.8rem; /* tamanho pequeno. */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px 28px;
+    color: rgba(244, 242, 220, 0.72);
+    font-size: 0.8rem;
 }
 
 .rodape nav a:hover {
-    color: var(--lime); /* deixa o link verde ao passar o mouse. */
+    color: var(--lime);
 }
 
 .rodape-inferior {
-    padding-top: 20px; /* espaço acima da linha inferior. */
-    border-top: 1px solid rgba(193, 255, 114, 0.08); /* linha fina separadora. */
-    color: rgba(244, 242, 220, 0.55); /* texto mais claro. */
-    font-size: 0.75rem; /* texto pequeno. */
+    padding-top: 20px;
+    border-top: 1px solid rgba(193, 255, 114, 0.08);
+    color: rgba(244, 242, 220, 0.55);
+    font-size: 0.75rem;
 }
 
 .barra-experiencia {
-    flex: 1; /* ocupa o espaço disponível. */
-    max-width: 400px; /* limita a largura da barra. */
-    height: 8px; /* altura da barra. */
-    overflow: hidden; /* esconde qualquer excesso. */
-    border-radius: 20px; /* bordas arredondadas. */
-    background: rgba(193, 255, 114, 0.1); /* fundo verde bem suave. */
+    flex: 1;
+    max-width: 400px;
+    height: 8px;
+    overflow: hidden;
+    border-radius: 20px;
+    background: rgba(193, 255, 114, 0.1);
 }
 
 .barra-experiencia span {
-    display: block; /* faz a barra interna virar um bloco. */
-    width: 20%; /* a parte preenchida ocupa 20%. */
-    height: 100%; /* altura completa. */
-    background: var(--lime); /* cor verde da progressão. */
-    box-shadow: 0 0 15px var(--lime); /* cria brilho ao redor. */
+    display: block;
+    width: 20%;
+    height: 100%;
+    background: var(--lime);
+    box-shadow: 0 0 15px var(--lime);
 }
 
 /* ---------- FAZENDA ANTES / DEPOIS ---------- */
 .progresso {
-    overflow: hidden; /* esconde qualquer excesso visual. */
-    background: var(--green); /* fundo verde da seção. */
+    overflow: hidden;
+    background: var(--green);
 }
 
 .progresso::before {
-    position: absolute; /* posiciona o padrão sobre a seção. */
-    inset: 0; /* ocupa todo o espaço. */
+    position: absolute;
+    inset: 0;
     background:
         linear-gradient(
             135deg,
             rgba(193, 255, 114, 0.04) 25%,
             transparent 25%
-        ) 0 0 / 40px 40px; /* cria um padrão de linhas diagonais. */
-    content: ""; /* cria o pseudo-elemento visual. */
+        ) 0 0 / 40px 40px;
+    content: "";
 }
 
 .progresso .conteiner {
-    position: relative; /* base para o padrão acima. */
-    display: grid; /* usa grid para dividir texto e telas. */
-    grid-template-columns: 0.8fr 1.2fr; /* proporção da esquerda e direita. */
-    align-items: center; /* centraliza verticalmente. */
-    gap: 70px; /* espaço entre os lados. */
+    position: relative;
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    align-items: center;
+    gap: 70px;
 }
 
 .conteudo-progresso {
-    position: relative; /* coloca acima do padrão fundo. */
-    z-index: 2; /* empilha na frente. */
+    position: relative;
+    z-index: 2;
 }
 
 .conteudo-progresso h2 {
-    margin-top: 18px; /* espaço acima do título. */
-    color: var(--white); /* texto branco. */
-    font-size: clamp(2.4rem, 4vw, 4.5rem); /* tamanho responsivo. */
-    line-height: 0.98; /* aproxima a linha. */
-    letter-spacing: -0.06em; /* deixa mais compacta. */
+    margin-top: 18px;
+    color: var(--white);
+    font-size: clamp(2.4rem, 4vw, 4.5rem);
+    line-height: 0.98;
+    letter-spacing: -0.06em;
 }
 
 .conteudo-progresso h2 span {
-    display: block; /* força a segunda linha em separado. */
-    color: var(--lime); /* texto verde. */
+    display: block;
+    color: var(--lime);
 }
 
 .conteudo-progresso p {
-    max-width: 500px; /* limita a largura do texto. */
-    margin-top: 24px; /* espaço acima do parágrafo. */
-    color: rgba(244, 242, 220, 0.68); /* texto claro com transparência. */
+    max-width: 500px;
+    margin-top: 24px;
+    color: rgba(244, 242, 220, 0.68);
 }
 
 .conteudo-progresso .botao {
-    margin-top: 30px; /* espaço acima do botão. */
+    margin-top: 30px;
 }
 
 .telas-progresso {
-    display: grid; /* usa grid para as duas telas. */
-    grid-template-columns: repeat(2, minmax(210px, 1fr)); /* duas colunas com largura flexível. */
-    gap: 18px; /* espaço entre as telas. */
-    align-items: end; /* alinha no fundo das telas. */
-    max-width: 620px; /* limita a largura total. */
-    margin-inline: auto; /* centraliza no bloco. */
-    justify-content: center; /* centraliza as telas. */
+    display: grid;
+    grid-template-columns: repeat(2, minmax(210px, 1fr));
+    gap: 18px;
+    align-items: end;
+    max-width: 620px;
+    margin-inline: auto;
+    justify-content: center;
 }
 
 .celular {
-    position: relative; /* base para a barra do topo. */
-    width: 100%; /* ocupa toda a largura da coluna. */
-    padding: 14px 12px 16px; /* espaço interno. */
-    border: 2px solid rgba(193, 255, 114, 0.18); /* borda verde suave. */
-    border-radius: 30px; /* cantos arredondados. */
-    background: linear-gradient(180deg, #061209 0%, #0b1b0d 100%); /* fundo gradiente escuro. */
-    box-shadow: 0 26px 60px rgba(0, 0, 0, 0.22); /* sombra para dar profundidade. */
+    position: relative;
+    width: 100%;
+    padding: 14px 12px 16px;
+    border: 2px solid rgba(193, 255, 114, 0.18);
+    border-radius: 30px;
+    background: linear-gradient(
+        180deg,
+        #061209 0%,
+        #0b1b0d 100%
+    );
+    box-shadow: 0 26px 60px rgba(0, 0, 0, 0.22);
 }
 
 .celular::before {
-    position: absolute; /* coloca a barra do topo. */
-    top: 8px; /* distanciamento do topo. */
-    left: 50%; /* centraliza horizontalmente. */
-    width: 72px; /* largura da barra. */
-    height: 6px; /* altura da barra. */
-    border-radius: 999px; /* deixa bem arredondada. */
-    background: rgba(244, 242, 220, 0.18); /* cor clara translúcida. */
-    transform: translateX(-50%); /* ajusta para ficar centralizada. */
-    content: ""; /* cria o pseudo-elemento. */
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    width: 72px;
+    height: 6px;
+    border-radius: 999px;
+    background: rgba(244, 242, 220, 0.18);
+    transform: translateX(-50%);
+    content: "";
 }
 
 .tela-celular {
-    overflow: hidden; /* esconde excessos da imagem. */
-    border: 2px solid rgba(193, 255, 114, 0.12); /* borda fina verde. */
-    border-radius: 22px; /* cantos arredondados. */
-    background: linear-gradient(180deg, rgba(16, 84, 57, 0.28), rgba(7, 18, 8, 0.8)); /* fundo de tela. */
-    aspect-ratio: 9 / 15.8; /* mantém proporção do celular. */
+    overflow: hidden;
+    border: 2px solid rgba(193, 255, 114, 0.12);
+    border-radius: 22px;
+    background: linear-gradient(
+        180deg,
+        rgba(16, 84, 57, 0.28),
+        rgba(7, 18, 8, 0.8)
+    );
+    aspect-ratio: 9 / 15.8;
 }
 
 .tela-celular img {
-    width: 100%; /* imagem ocupa toda a largura. */
-    height: 100%; /* imagem ocupa toda a altura. */
-    object-fit: cover; /* cobre a área sem distorcer. */
-    image-rendering: pixelated; /* deixa a imagem mais pixelada. */
-    filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.15)); /* cria sombra na imagem. */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    image-rendering: pixelated;
+    filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.15));
 }
 
 .celular--depois {
-    transform: translateY(18px); /* desloca a segunda tela para baixo. */
-}
-
-@media (max-width: 760px) {
-    .progresso .conteiner {
-        grid-template-columns: 1fr; /* em telas pequenas a seção vira uma coluna. */
-    }
-
-    .telas-progresso {
-        max-width: 420px; /* limita a largura da área. */
-        grid-template-columns: repeat(2, minmax(140px, 1fr)); /* mantém duas telas em telas menores. */
-    }
+    transform: translateY(18px);
 }
 
 /* ---------- CONTATO ---------- */
 #contato,
 .contato {
-    background: var(--bg); /* fundo escuro da seção. */
+    background: var(--bg);
 }
 
 .grade-contato {
-    display: grid; /* usa grid para dividir info e formulário. */
-    grid-template-columns: 0.8fr 1.2fr; /* coluna menor da informação e maior do formulário. */
-    gap: 100px; /* espaço grande entre os lados. */
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 100px;
 }
 
 .info-contato {
-    display: flex; /* empilha os blocos em coluna. */
-    flex-direction: column; /* deixa os itens um abaixo do outro. */
-    gap: 32px; /* espaço entre os blocos. */
-    font-style: normal; /* remove estilo de itálico. */
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    font-style: normal;
 }
 
 .info-contato > div {
-    display: flex; /* organiza o texto em coluna. */
-    flex-direction: column; /* empilha os itens. */
-    gap: 6px; /* espaço entre linhas. */
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
 }
 
 .etiqueta-contato {
-    color: rgba(244, 242, 220, 0.4); /* texto mais claro e suave. */
-    font-family: var(--font-pixel); /* fonte pixel. */
-    font-size: 0.55rem; /* tamanho pequeno. */
-    text-transform: uppercase; /* deixa em maiúsculas. */
+    color: rgba(244, 242, 220, 0.4);
+    font-family: var(--font-pixel);
+    font-size: 0.55rem;
+    text-transform: uppercase;
 }
 
 .info-contato a {
-    width: fit-content; /* a área do link se ajusta ao conteúdo. */
-    color: var(--cream); /* texto claro. */
-    font-size: 1rem; /* tamanho do texto. */
-    font-weight: 700; /* deixa mais forte. */
-    transition: color var(--transition); /* muda a cor suavemente. */
+    width: fit-content;
+    color: var(--cream);
+    font-size: 1rem;
+    font-weight: 700;
+    transition: color var(--transition);
 }
 
 .info-contato a:hover {
-    color: var(--lime); /* deixa verde no hover. */
+    color: var(--lime);
 }
 
-/* Formulário de contato da página. */
 .formulario-contato {
-    display: flex; /* organiza os campos em coluna. */
-    flex-direction: column; /* empilha os itens verticalmente. */
-    gap: 22px; /* espaço entre campos. */
-    padding: 40px; /* espaço interno do formulário. */
-    border: 1px solid rgba(193, 255, 114, 0.14); /* borda fina verde. */
-    border-radius: 26px; /* cantos arredondados. */
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    padding: 40px;
+    border: 1px solid rgba(193, 255, 114, 0.14);
+    border-radius: 26px;
     background:
-        linear-gradient(180deg, rgba(16, 36, 20, 0.96), rgba(7, 18, 8, 0.96)); /* fundo escuro com leve gradiente. */
+        linear-gradient(
+            180deg,
+            rgba(16, 36, 20, 0.96),
+            rgba(7, 18, 8, 0.96)
+        );
     box-shadow:
         0 24px 60px rgba(0, 0, 0, 0.28),
-        inset 0 0 0 1px rgba(193, 255, 114, 0.04); /* sombra para dar profundidade. */
+        inset 0 0 0 1px rgba(193, 255, 114, 0.04);
 }
 
 .campo-formulario {
-    display: flex; /* empilha label e input. */
-    flex-direction: column; /* coloca em coluna. */
-    gap: 10px; /* espaço entre label e campo. */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .campo-formulario label {
-    color: var(--white); /* texto branco. */
-    font-size: 0.8rem; /* tamanho pequeno. */
-    font-weight: 700; /* deixa forte. */
+    color: var(--white);
+    font-size: 0.8rem;
+    font-weight: 700;
 }
 
 .campo-formulario input,
 .campo-formulario textarea {
-    width: 100%; /* ocupa toda a largura. */
-    padding: 15px 16px; /* espaçamento interno do input. */
-    border: 1px solid rgba(193, 255, 114, 0.12); /* borda verde suave. */
-    border-radius: 14px; /* cantos arredondados. */
-    background: rgba(244, 242, 220, 0.03); /* fundo bem levemente claro. */
-    color: var(--cream); /* texto claro. */
+    width: 100%;
+    padding: 15px 16px;
+    border: 1px solid rgba(193, 255, 114, 0.12);
+    border-radius: 14px;
+    background: rgba(244, 242, 220, 0.03);
+    color: var(--cream);
     transition:
         border-color var(--transition),
         box-shadow var(--transition),
-        transform var(--transition); /* anima borda e foco. */
+        transform var(--transition);
 }
 
 .campo-formulario input::placeholder,
 .campo-formulario textarea::placeholder {
-    color: rgba(244, 242, 220, 0.38); /* placeholder claro e suave. */
+    color: rgba(244, 242, 220, 0.38);
 }
 
 .campo-formulario input:focus,
 .campo-formulario textarea:focus {
-    outline: none; /* remove a borda padrão do navegador. */
-    border-color: rgba(193, 255, 114, 0.52); /* borda verde mais visível. */
-    box-shadow: 0 0 0 4px rgba(193, 255, 114, 0.08); /* cria brilho ao focar. */
-    background: rgba(193, 255, 114, 0.02); /* fundo bem leve. */
+    outline: none;
+    border-color: rgba(193, 255, 114, 0.52);
+    box-shadow: 0 0 0 4px rgba(193, 255, 114, 0.08);
+    background: rgba(193, 255, 114, 0.02);
 }
 
 .campo-formulario textarea {
-    min-height: 150px; /* altura mínima do campo grande. */
-    resize: vertical; /* permite ajustar a altura do texto. */
+    min-height: 150px;
+    resize: vertical;
 }
 
 .formulario-contato .botao {
-    align-self: flex-start; /* deixa o botão alinhado à esquerda. */
-    min-width: 210px; /* largura mínima do botão. */
+    align-self: flex-start;
+    min-width: 210px;
+}
+
+/* ---------- RESPONSIVIDADE ---------- */
+@media (max-width: 1000px) {
+    .menu-lista {
+        gap: 16px;
+    }
+
+    .conjunto-apresentacao {
+        grid-template-columns: 1fr;
+    }
+
+    .conteudo-apresentacao {
+        max-width: 720px;
+        padding-bottom: 60px;
+    }
+
+    .cena-apresentacao {
+        position: absolute;
+        inset: 0;
+        min-height: 100%;
+        opacity: 0.45;
+    }
+
+    .progresso .conteiner {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .grade-contato {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+}
+
+@media (max-width: 850px) {
+    .etapas {
+        grid-template-columns: 1fr;
+    }
+
+    .card-etapa {
+        min-height: auto;
+    }
+
+    .premio {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .lista-personagens {
+        grid-template-columns: 1fr;
+    }
+
+    .linha-historia,
+    .linha-historia.invertida {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .linha-historia.invertida .texto-historia,
+    .linha-historia.invertida .imagem-historia {
+        order: initial;
+    }
+
+    .texto-historia {
+        max-width: 100%;
+    }
+
+    .linha-historia .imagem-historia {
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 760px) {
+    .conteiner {
+        width: min(calc(100% - 28px), var(--container));
+    }
+
+    .cabecalho .conteiner {
+        min-height: 68px;
+    }
+
+    .marca-logo {
+        width: 150px;
+    }
+
+    .menu-lista {
+        display: none;
+        position: absolute;
+        top: 68px;
+        right: 14px;
+        left: 14px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 12px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: rgba(7, 18, 8, 0.96);
+        box-shadow: var(--shadow);
+    }
+
+    .menu-lista.ativo {
+        display: flex;
+    }
+
+    .link-menu {
+        display: block;
+        padding: 14px 12px;
+    }
+
+    .menu-botao {
+        display: flex;
+    }
+
+    .cabecalho .botao--pequeno {
+        display: none;
+    }
+
+    .titulo-apresentacao {
+        font-size: clamp(2.7rem, 12vw, 4.5rem);
+    }
+
+    .estatisticas-apresentacao {
+        flex-wrap: wrap;
+        gap: 18px 0;
+    }
+
+    .estatisticas-apresentacao li {
+        min-width: 33.333%;
+    }
+
+    .acoes-apresentacao {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .acoes-apresentacao .botao {
+        width: 100%;
+    }
+
+    .personagem-apresentacao {
+        width: 65px;
+    }
+
+    .personagem-apresentacao--koda {
+        width: 75px;
+    }
+
+    .telas-progresso {
+        max-width: 420px;
+        grid-template-columns: repeat(2, minmax(140px, 1fr));
+    }
+
+    .corpo-personagem {
+        padding: 28px;
+    }
+
+    .card-personagem {
+        min-height: 380px;
+    }
+
+    .formulario-contato {
+        padding: 25px;
+    }
+
+    .formulario-desafio fieldset {
+        grid-template-columns: 1fr;
+    }
+
+    .rodape-principal,
+    .rodape-inferior {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .barra-experiencia {
+        width: 100%;
+        max-width: none;
+    }
+}
+
+@media (max-width: 520px) {
+    .sessao {
+        padding: 75px 0;
+    }
+
+    .cabecalho-sessao {
+        margin-bottom: 45px;
+    }
+
+    .titulo-apresentacao {
+        font-size: 2.8rem;
+    }
+
+    .texto-apresentacao {
+        font-size: 0.95rem;
+    }
+
+    .estatisticas-apresentacao li {
+        min-width: 50%;
+    }
+
+    .estatisticas-apresentacao li:nth-child(2) {
+        border-right: 0;
+    }
+
+    .estatisticas-apresentacao li + li {
+        padding-left: 15px;
+    }
+
+    .estatisticas-apresentacao li:first-child {
+        padding-left: 0;
+    }
+
+    .card-personagem {
+        grid-template-columns: 1fr;
+    }
+
+    .card-personagem figure {
+        min-height: 260px;
+    }
+
+    .card-personagem img {
+        width: 55%;
+    }
+
+    .corpo-personagem {
+        padding: 25px;
+    }
+
+    .premio {
+        padding: 30px;
+    }
+
+    .premio ul {
+        grid-template-columns: 1fr;
+    }
+
+    .desafio {
+        padding: 25px 18px;
+    }
+
+    .desafio pre {
+        padding: 18px;
+        font-size: 0.75rem;
+    }
+
+    .telas-progresso {
+        gap: 10px;
+        grid-template-columns: repeat(2, minmax(120px, 1fr));
+    }
+
+    .celular {
+        padding: 9px 8px 11px;
+        border-radius: 22px;
+    }
+
+    .tela-celular {
+        border-radius: 16px;
+    }
+
+    .linha-historia {
+        padding: 30px 0 60px;
+    }
 }
