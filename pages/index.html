@@ -1,6 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 
+<!--
+    O head guarda as informações que o navegador usa para interpretar
+    a página: charset, responsividade, descrição, título e links externos.
+-->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,57 +32,65 @@
 
 <body>
 
-    <header class="site-header">
+    <!--
+        Parte de cima do site com logo, menu e botão principal.
+    -->
+    <header class="cabecalho">
 
-        <div class="container">
+        <div class="conteiner">
 
-            <a href="#home" class="logo" aria-label="TurtleLogic - início">
+            <!--
+                Logo da marca, que leva para o início da página.
+            -->
+            <a href="#inicio" class="marca" aria-label="TurtleLogic - início">
 
-                <span class="logo__pixel">TL</span>
-
-                <span class="logo__text">
-                    Turtle
-                    <strong>Logic</strong>
-                </span>
+                <img
+                    src="../assets/logo.png"
+                    alt="TurtleLogic"
+                    class="marca-logo"
+                >
 
             </a>
 
-            <nav class="site-navigation" aria-label="Navegação principal">
+            <!--
+                Menu com os links das seções da página.
+            -->
+            <nav aria-label="Navegação principal">
 
-                <ul class="site-navigation__list">
+                <ul class="menu-lista">
 
                     <li>
-                        <a href="#home" class="site-navigation__link">
-                            Home
+                        <a href="#inicio" class="link-menu">
+                            Início
                         </a>
                     </li>
 
                     <li>
-                        <a href="#sobre" class="site-navigation__link">
+                        <a href="#sobre" class="link-menu">
                             Sobre
                         </a>
                     </li>
 
                     <li>
-                        <a href="#gameplay" class="site-navigation__link">
-                            Gameplay
+                        <a href="#como-funciona" class="link-menu">
+                            Como funciona
                         </a>
                     </li>
 
                     <li>
-                        <a href="#personagens" class="site-navigation__link">
+                        <a href="#personagens" class="link-menu">
                             Personagens
                         </a>
                     </li>
 
                     <li>
-                        <a href="#demo" class="site-navigation__link">
-                            Demo
+                        <a href="#demonstracao" class="link-menu">
+                            Demonstração
                         </a>
                     </li>
 
                     <li>
-                        <a href="#contato" class="site-navigation__link">
+                        <a href="#contato" class="link-menu">
                             Contato
                         </a>
                     </li>
@@ -86,16 +99,21 @@
 
             </nav>
 
-            <a href="#demo" class="button button--small">
-                Jogar Demo
+            <!--
+                Botão para ir direto para a demonstração.
+            -->
+            <a href="#demonstracao" class="botao botao--pequeno">
+                Jogar demonstração
             </a>
 
+            <!--
+                Botão de menu para telas menores.
+            -->
             <button
                 type="button"
-                class="menu-toggle"
+                class="menu-botao"
                 aria-label="Abrir menu"
                 aria-expanded="false"
-                aria-controls="main-navigation"
             >
                 <span></span>
                 <span></span>
@@ -108,51 +126,56 @@
 
     <main>
 
-        <section id="home" class="hero">
+        <!--
+            Primeira parte da página, com a mensagem principal e a imagem do banner.
+        -->
+        <section id="inicio" class="apresentacao">
 
-            <div class="hero__background" aria-hidden="true">
+            <div class="conteiner conjunto-apresentacao">
 
-                <span class="hero__sun"></span>
+                <article class="conteudo-apresentacao">
 
-                <span class="hero__cloud hero__cloud--one"></span>
-                <span class="hero__cloud hero__cloud--two"></span>
-
-                <span class="hero__mountain hero__mountain--one"></span>
-                <span class="hero__mountain hero__mountain--two"></span>
-
-            </div>
-
-            <div class="container hero__container">
-
-                <article class="hero__content">
-
-                    <span class="eyebrow">
+                    <!--
+                        Texto pequeno acima do título.
+                    -->
+                    <span class="etiqueta">
                         A jornada começa com lógica
                     </span>
 
-                    <h1 class="hero__title">
+                    <!--
+                        Título principal da página.
+                    -->
+                    <h1 class="titulo-apresentacao">
                         Cada linha de código
                         <span>desbloqueia um novo mundo.</span>
                     </h1>
 
-                    <p class="hero__description">
+                    <!--
+                        Texto explicando a ideia do jogo.
+                    -->
+                    <p class="texto-apresentacao">
                         No TurtleLogic, você aprende programação enquanto reativa uma fazenda abandonada, resolve desafios e transforma o vale em um lugar cheio de vida.
                     </p>
 
-                    <div class="hero__actions">
+                    <!--
+                        Botões para começar ou explorar mais.
+                    -->
+                    <div class="acoes-apresentacao">
 
-                        <a href="#demo" class="button button--primary">
-                            Jogar Demo
-                            <span aria-hidden="true">→</span>
+                        <a href="#demonstracao" class="botao botao--primario">
+                            Jogar demonstração
                         </a>
 
-                        <a href="#sobre" class="button button--ghost">
+                        <a href="#sobre" class="botao botao--secundario">
                             Explorar o Vale
                         </a>
 
                     </div>
 
-                    <ul class="hero__stats" aria-label="Informações sobre o jogo">
+                    <!--
+                        Dados rápidos sobre o projeto.
+                    -->
+                    <ul class="estatisticas-apresentacao" aria-label="Informações sobre o jogo">
 
                         <li>
                             <strong>04</strong>
@@ -173,57 +196,42 @@
 
                 </article>
 
-                <figure class="hero__scene">
-
-                    <span class="scene__cloud scene__cloud--one" aria-hidden="true"></span>
-                    <span class="scene__cloud scene__cloud--two" aria-hidden="true"></span>
-
-                    <img
-                        src="assets/images/mountains.png"
-                        alt=""
-                        class="scene__mountains"
-                    >
+                <!--
+                    Cena com a imagem de fundo e os personagens.
+                -->
+                <figure class="cena-apresentacao">
 
                     <img
-                        src="assets/images/trees.png"
+                        src="../assets/img-banner.png"
                         alt=""
-                        class="scene__trees"
-                    >
-
-                    
-
-                    
+                        class="img-banner"
+                        aria-hidden="true"
                     >
 
                     <img
                         src="../assets/donatelo.png"
                         alt="Donatelo"
-                        class="scene__character scene__character--donatelo"
+                        class="personagem-apresentacao personagem-apresentacao--donatelo"
                     >
 
                     <img
                         src="../assets/frida.png"
                         alt="Frida"
-                        class="scene__character scene__character--frida"
+                        class="personagem-apresentacao personagem-apresentacao--frida"
                     >
 
                     <img
                         src="../assets/koda.png"
                         alt="Koda"
-                        class="scene__character scene__character--koda"
+                        class="personagem-apresentacao personagem-apresentacao--koda"
                     >
 
                     <img
                         src="../assets/agatha.png"
                         alt="Agatha"
-                        class="scene__character scene__character--agatha"
+                        class="personagem-apresentacao personagem-apresentacao--agatha"
                     >
 
-                    <span class="scene__grass" aria-hidden="true"></span>
-
-                    <figcaption>
-                        Explore o Vale TurtleLogic com seus novos amigos.
-                    </figcaption>
 
                 </figure>
 
@@ -231,13 +239,16 @@
 
         </section>
 
-        <section id="sobre" class="story section">
+        <!--
+            Seção da história, mostrando a fazenda abandonada e o começo da jornada.
+        -->
+        <section id="sobre" class="sessao">
 
-            <div class="container">
+            <div class="conteiner">
 
-                <header class="section-header">
+                <header class="cabecalho-sessao">
 
-                    <span class="eyebrow">
+                    <span class="etiqueta">
                         Sua história começa aqui
                     </span>
 
@@ -252,11 +263,11 @@
 
                 </header>
 
-                <div class="story__content">
+                <div class="linha-historia">
 
-                    <article class="story__text">
+                    <article class="texto-historia">
 
-                        <span class="story__number">
+                        <span class="numero-historia">
                             01
                         </span>
 
@@ -272,17 +283,16 @@
                             Mas com lógica, curiosidade e ajuda dos moradores, o vale pode voltar a florescer.
                         </p>
 
-                        <a href="#personagens" class="text-link">
+                        <a href="#personagens" class="link-texto">
                             Conheça seus companheiros
-                            <span aria-hidden="true">→</span>
                         </a>
 
                     </article>
 
-                    <figure class="story__image">
+                    <figure class="imagem-historia">
 
                         <img
-                            src="../assets/cabanainicio.png"
+                            src="../assets/casaruina.png"
                             alt="Cabana antiga e abandonada da fazenda"
                         >
 
@@ -294,11 +304,11 @@
 
                 </div>
 
-                <div class="story__content story__content--reverse">
+                <div class="linha-historia invertida">
 
-                    <article class="story__text">
+                    <article class="texto-historia">
 
-                        <span class="story__number">
+                        <span class="numero-historia">
                             02
                         </span>
 
@@ -314,18 +324,19 @@
                             Resolva seus desafios e transforme o conhecimento em melhorias reais para a fazenda.
                         </p>
 
-                        <a href="#gameplay" class="text-link">
+                        <a href="#como-funciona" class="link-texto">
                             Descobrir como funciona
-                            <span aria-hidden="true">→</span>
                         </a>
 
                     </article>
 
-                    <figure class="story__image">
+                    <figure class="imagem-historia">
 
                         <img
                             src="../assets/vila.png"
-                        alt="Vale TurtleLogic com os moradores e construções"
+                            alt="Vale TurtleLogic com os moradores e construções"
+                        >
+
                         <figcaption>
                             O vale está cheio de histórias para descobrir.
                         </figcaption>
@@ -338,13 +349,16 @@
 
         </section>
 
-        <section id="gameplay" class="gameplay section">
+        <!--
+            Seção que explica como o jogo funciona em passos simples.
+        -->
+        <section id="como-funciona" class="sessao">
 
-            <div class="container">
+            <div class="conteiner">
 
-                <header class="section-header section-header--center">
+                <header class="cabecalho-sessao cabecalho-sessao--centro">
 
-                    <span class="eyebrow">
+                    <span class="etiqueta">
                         Como funciona
                     </span>
 
@@ -359,15 +373,15 @@
 
                 </header>
 
-                <ol class="gameplay__steps">
+                <ol class="etapas">
 
-                    <li class="gameplay-card">
+                    <li class="card-etapa">
 
-                        <span class="gameplay-card__number">
+                        <span class="numero-etapa">
                             01
                         </span>
 
-                        <div class="gameplay-card__icon" aria-hidden="true">
+                        <div class="icone-etapa" aria-hidden="true">
                             ◈
                         </div>
 
@@ -381,13 +395,13 @@
 
                     </li>
 
-                    <li class="gameplay-card">
+                    <li class="card-etapa">
 
-                        <span class="gameplay-card__number">
+                        <span class="numero-etapa">
                             02
                         </span>
 
-                        <div class="gameplay-card__icon" aria-hidden="true">
+                        <div class="icone-etapa" aria-hidden="true">
                             &lt;/&gt;
                         </div>
 
@@ -401,13 +415,13 @@
 
                     </li>
 
-                    <li class="gameplay-card">
+                    <li class="card-etapa">
 
-                        <span class="gameplay-card__number">
+                        <span class="numero-etapa">
                             03
                         </span>
 
-                        <div class="gameplay-card__icon" aria-hidden="true">
+                        <div class="icone-etapa" aria-hidden="true">
                             +
                         </div>
 
@@ -423,11 +437,11 @@
 
                 </ol>
 
-                <aside class="gameplay__reward">
+                <aside class="premio">
 
                     <div>
 
-                        <span class="eyebrow">
+                        <span class="etiqueta">
                             Sua evolução
                         </span>
 
@@ -471,13 +485,16 @@
 
         </section>
 
-        <section id="personagens" class="characters section">
+        <!--
+            Seção dos personagens do jogo.
+        -->
+        <section id="personagens" class="sessao">
 
-            <div class="container">
+            <div class="conteiner">
 
-                <header class="section-header">
+                <header class="cabecalho-sessao">
 
-                    <span class="eyebrow">
+                    <span class="etiqueta">
                         Conheça o Vale
                     </span>
 
@@ -492,9 +509,9 @@
 
                 </header>
 
-                <div class="characters__grid">
+                <div class="lista-personagens">
 
-                    <article class="character-card character-card--donatelo">
+                    <article class="card-personagem">
 
                         <figure>
 
@@ -505,9 +522,9 @@
 
                         </figure>
 
-                        <div class="character-card__content">
+                        <div class="corpo-personagem">
 
-                            <span class="character-card__role">
+                            <span class="cargo-personagem">
                                 Mentor
                             </span>
 
@@ -537,7 +554,7 @@
 
                     </article>
 
-                    <article class="character-card character-card--frida">
+                    <article class="card-personagem card-personagem--frida">
 
                         <figure>
 
@@ -548,9 +565,9 @@
 
                         </figure>
 
-                        <div class="character-card__content">
+                        <div class="corpo-personagem">
 
-                            <span class="character-card__role">
+                            <span class="cargo-personagem">
                                 Programadora
                             </span>
 
@@ -580,7 +597,7 @@
 
                     </article>
 
-                    <article class="character-card character-card--koda">
+                    <article class="card-personagem card-personagem--koda">
 
                         <figure>
 
@@ -591,9 +608,9 @@
 
                         </figure>
 
-                        <div class="character-card__content">
+                        <div class="corpo-personagem">
 
-                            <span class="character-card__role">
+                            <span class="cargo-personagem">
                                 Inventor
                             </span>
 
@@ -623,7 +640,7 @@
 
                     </article>
 
-                    <article class="character-card character-card--agatha">
+                    <article class="card-personagem card-personagem--agatha">
 
                         <figure>
 
@@ -634,9 +651,9 @@
 
                         </figure>
 
-                        <div class="character-card__content">
+                        <div class="corpo-personagem">
 
-                            <span class="character-card__role">
+                            <span class="cargo-personagem">
                                 Exploradora
                             </span>
 
@@ -672,13 +689,16 @@
 
         </section>
 
-        <section id="demo" class="demo section">
+        <!--
+            Seção com o mini desafio da página.
+        -->
+        <section id="demonstracao" class="sessao">
 
-            <div class="container">
+            <div class="conteiner">
 
-                <header class="section-header section-header--center">
+                <header class="cabecalho-sessao cabecalho-sessao--centro">
 
-                    <span class="eyebrow">
+                    <span class="etiqueta">
                         Primeira missão
                     </span>
 
@@ -693,11 +713,11 @@
 
                 </header>
 
-                <article class="game-window">
+                <article class="janela-demo">
 
-                    <header class="game-window__header">
+                    <header class="cabecalho-demo">
 
-                        <div class="game-window__dots" aria-hidden="true">
+                        <div class="pontos-janela" aria-hidden="true">
                             <span></span>
                             <span></span>
                             <span></span>
@@ -713,28 +733,11 @@
 
                     </header>
 
-                    <div class="game-window__body">
+                    <div class="corpo-demo">
 
-                        <div class="game-window__character">
+                        <div class="desafio">
 
-                            <figure>
-
-                                <img
-                                    src="../assets/frida.png"
-                                    alt="Frida"
-                                >
-
-                            </figure>
-
-                            <p>
-                                "Oi! Você pode me ajudar a terminar esse código?"
-                            </p>
-
-                        </div>
-
-                        <div class="challenge">
-
-                            <span class="challenge__label">
+                            <span class="etiqueta-desafio">
                                 DESAFIO DE SINTAXE
                             </span>
 
@@ -746,18 +749,18 @@
     console.log(i);
 }</code></pre>
 
-                            <form class="challenge__form">
+                            <form class="formulario-desafio">
 
                                 <fieldset>
 
                                     <legend>
-                                        Qual valor completa o código?
+                                        Qual valor faz o loop imprimir 0, 1, 2, 3 e 4?
                                     </legend>
 
                                     <label>
                                         <input
                                             type="radio"
-                                            name="demo-answer"
+                                            name="resposta-desafio"
                                             value="5"
                                         >
                                         <span>5</span>
@@ -766,7 +769,7 @@
                                     <label>
                                         <input
                                             type="radio"
-                                            name="demo-answer"
+                                            name="resposta-desafio"
                                             value="10"
                                         >
                                         <span>10</span>
@@ -775,7 +778,7 @@
                                     <label>
                                         <input
                                             type="radio"
-                                            name="demo-answer"
+                                            name="resposta-desafio"
                                             value="100"
                                         >
                                         <span>100</span>
@@ -784,7 +787,7 @@
                                     <label>
                                         <input
                                             type="radio"
-                                            name="demo-answer"
+                                            name="resposta-desafio"
                                             value="i"
                                         >
                                         <span>i</span>
@@ -794,8 +797,8 @@
 
                                 <button
                                     type="button"
-                                    class="button button--primary"
-                                    id="check-demo"
+                                    class="botao botao--primario"
+                                    id="verificar-desafio"
                                 >
                                     Verificar resposta
                                 </button>
@@ -803,8 +806,8 @@
                             </form>
 
                             <output
-                                id="demo-result"
-                                class="challenge__result"
+                                id="resultado-desafio"
+                                class="resultado-desafio"
                                 aria-live="polite"
                             ></output>
 
@@ -812,14 +815,14 @@
 
                     </div>
 
-                    <footer class="game-window__footer">
+                    <footer class="rodape-demo">
 
                         <span>
                             NÍVEL 01
                         </span>
 
                         <div
-                            class="experience-bar"
+                            class="barra-experiencia"
                             aria-label="20 de 100 XP"
                         >
                             <span></span>
@@ -837,13 +840,16 @@
 
         </section>
 
-        <section class="progress section">
+        <!--
+            Mostra a fazenda antes e depois.
+        -->
+        <section class="sessao progresso">
 
-            <div class="container">
+            <div class="conteiner">
 
-                <div class="progress__content">
+                <div class="conteudo-progresso">
 
-                    <span class="eyebrow">
+                    <span class="etiqueta">
                         Sua fazenda
                     </span>
 
@@ -856,26 +862,25 @@
                         Sua evolução dentro do jogo também muda o cenário ao seu redor. Cada conquista deixa o vale um pouco mais vivo.
                     </p>
 
-                    <a href="#demo" class="button button--primary">
+                    <a href="#demonstracao" class="botao botao--primario">
                         Começar minha jornada
-                        <span aria-hidden="true">→</span>
                     </a>
 
                 </div>
 
-                <div class="progress__devices" aria-label="Comparação da fazenda antes e depois">
+                <div class="telas-progresso" aria-label="Comparação da fazenda antes e depois">
 
-                    <div class="phone-mockup">
-                        <div class="phone-mockup__screen">
+                    <div class="celular">
+                        <div class="tela-celular">
                             <img
-                                src="../assets/antes.png"
+                                src="../assets/casaruina.png"
                                 alt="Fazenda antes da reconstrução"
                             >
                         </div>
                     </div>
 
-                    <div class="phone-mockup phone-mockup--after">
-                        <div class="phone-mockup__screen">
+                    <div class="celular celular--depois">
+                        <div class="tela-celular">
                             <img
                                 src="../assets/depois.png"
                                 alt="Fazenda depois da reconstrução"
@@ -889,13 +894,16 @@
 
         </section>
 
-        <section id="contato" class="contact section">
+        <!--
+            Seção de contato com a equipe.
+        -->
+        <section id="contato" class="sessao contato">
 
-            <div class="container">
+            <div class="conteiner">
 
-                <header class="section-header">
+                <header class="cabecalho-sessao">
 
-                    <span class="eyebrow">
+                    <span class="etiqueta">
                         Entre em contato
                     </span>
 
@@ -910,13 +918,13 @@
 
                 </header>
 
-                <div class="contact__grid">
+                <div class="grade-contato">
 
-                    <address class="contact__information">
+                    <address class="info-contato">
 
                         <div>
 
-                            <span class="contact__label">
+                            <span class="etiqueta-contato">
                                 E-mail
                             </span>
 
@@ -928,7 +936,7 @@
 
                         <div>
 
-                            <span class="contact__label">
+                            <span class="etiqueta-contato">
                                 Comunidade
                             </span>
 
@@ -940,7 +948,7 @@
 
                         <div>
 
-                            <span class="contact__label">
+                            <span class="etiqueta-contato">
                                 Desenvolvimento
                             </span>
 
@@ -952,7 +960,7 @@
 
                         <div>
 
-                            <span class="contact__label">
+                            <span class="etiqueta-contato">
                                 Redes sociais
                             </span>
 
@@ -964,9 +972,9 @@
 
                     </address>
 
-                    <form class="contact__form">
+                    <form class="formulario-contato">
 
-                        <div class="form-field">
+                        <div class="campo-formulario">
 
                             <label for="name">
                                 Seu nome
@@ -983,7 +991,7 @@
 
                         </div>
 
-                        <div class="form-field">
+                        <div class="campo-formulario">
 
                             <label for="email">
                                 Seu e-mail
@@ -1000,7 +1008,7 @@
 
                         </div>
 
-                        <div class="form-field">
+                        <div class="campo-formulario">
 
                             <label for="message">
                                 Mensagem
@@ -1018,10 +1026,9 @@
 
                         <button
                             type="submit"
-                            class="button button--primary"
+                            class="botao botao--primario"
                         >
                             Enviar mensagem
-                            <span aria-hidden="true">→</span>
                         </button>
 
                     </form>
@@ -1032,13 +1039,13 @@
 
         </section>
 
-        <section class="cta">
+        <section>
 
-            <div class="container">
+            <div class="conteiner">
 
-                <div class="cta__content">
+                <div class="conteudo-cta">
 
-                    <span class="eyebrow">
+                    <span class="etiqueta">
                         O Vale está esperando
                     </span>
 
@@ -1051,21 +1058,11 @@
                         Aprenda programação, faça novos amigos e transforme uma fazenda esquecida em um lar cheio de possibilidades.
                     </p>
 
-                    <a href="#demo" class="button button--primary">
-                        Jogar Demo
-                        <span aria-hidden="true">→</span>
+                    <a href="#demonstracao" class="botao botao--primario">
+                        Jogar demonstração
                     </a>
 
                 </div>
-
-                <figure class="cta__character">
-
-                    <img
-                        src="assets/images/player-friends.png"
-                        alt="Personagem principal acompanhado pelos moradores do vale"
-                    >
-
-                </figure>
 
             </div>
 
@@ -1073,22 +1070,14 @@
 
     </main>
 
-    <footer class="site-footer">
+    <!--
+        Rodapé final da página.
+    -->
+    <footer class="rodape">
 
-        <div class="container">
+        <div class="conteiner">
 
-            <div class="site-footer__main">
-
-                <a href="#home" class="logo">
-
-                    <span class="logo__pixel">TL</span>
-
-                    <span class="logo__text">
-                        Turtle
-                        <strong>Logic</strong>
-                    </span>
-
-                </a>
+            <div class="rodape-principal">
 
                 <p>
                     Aprender programação nunca foi tão divertido.
@@ -1101,8 +1090,8 @@
                 <ul>
 
                     <li>
-                        <a href="#home">
-                            Home
+                        <a href="#inicio">
+                            Início
                         </a>
                     </li>
 
@@ -1113,8 +1102,8 @@
                     </li>
 
                     <li>
-                        <a href="#gameplay">
-                            Gameplay
+                        <a href="#como-funciona">
+                            Como funciona
                         </a>
                     </li>
 
@@ -1125,8 +1114,8 @@
                     </li>
 
                     <li>
-                        <a href="#demo">
-                            Demo
+                        <a href="#demonstracao">
+                            Demonstração
                         </a>
                     </li>
 
@@ -1140,13 +1129,13 @@
 
             </nav>
 
-            <div class="site-footer__bottom">
+            <div class="rodape-inferior">
 
                 <small>
                     © 2026 TurtleLogic. Todos os direitos reservados.
                 </small>
 
-                <a href="#home">
+                <a href="#inicio">
                     Voltar ao topo ↑
                 </a>
 
@@ -1156,7 +1145,68 @@
 
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        /*
+            Este bloco de JavaScript valida a resposta do desafio.
+            Ele procura o botão de verificação, verifica a alternativa marcada
+            e mostra uma mensagem de feedback para a pessoa que está jogando.
+        */
+        const verificarDesafio = document.getElementById('verificar-desafio');
+        const resultadoDesafio = document.getElementById('resultado-desafio');
+
+        /*
+            A condição abaixo protege o código para que ele só execute se o botão
+            e a área de resposta existirem na página.
+        */
+        if (verificarDesafio && resultadoDesafio) {
+            /*
+                Este evento acontece quando a pessoa clica em "Verificar resposta".
+                A função verifica qual opção foi marcada e responde conforme o valor
+                escolhido.
+            */
+            verificarDesafio.addEventListener('click', () => {
+                /*
+                    selected busca o input radio que foi selecionado pelo usuário.
+                    O seletor usa o atributo name da pergunta, que é o mesmo para todas
+                    as alternativas do desafio.
+                */
+                const selected = document.querySelector('input[name="resposta-desafio"]:checked');
+
+                /*
+                    Se nenhum item for marcado, a página mostra uma mensagem pedindo
+                    que a pessoa escolha uma opção antes de continuar.
+                */
+                if (!selected) {
+                    resultadoDesafio.textContent = 'Escolha uma resposta antes de verificar.';
+                    resultadoDesafio.style.color = '#f4f2dc';
+                    return;
+                }
+
+                /*
+                    isCorrect compara o valor do item escolhido com a resposta correta.
+                    Nesse caso, o valor '5' é a resposta certa porque o loop imprime
+                    números de 0 até 4 quando a condição é i < 5.
+                */
+                const isCorrect = selected.value === '5';
+
+                /*
+                    Se o valor bater, a página mostra feedback positivo e encerra a função.
+                */
+                if (isCorrect) {
+                    resultadoDesafio.textContent = 'Resposta correta! Você avançou no loop.';
+                    resultadoDesafio.style.color = '#c1ff72';
+                    return;
+                }
+
+                /*
+                    Se a resposta estiver errada, a mensagem explica o motivo e mostra
+                    que o loop precisa terminar em 5 para imprimir até 4.
+                */
+                resultadoDesafio.textContent = 'Quase lá! O loop precisa parar em 5 para imprimir 0 até 4.';
+                resultadoDesafio.style.color = '#ffb4a2';
+            });
+        }
+    </script>
 
 </body>
 
